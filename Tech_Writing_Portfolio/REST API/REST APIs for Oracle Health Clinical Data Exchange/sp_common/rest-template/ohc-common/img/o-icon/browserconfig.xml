@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+  <msapplication>
+    <tile>
+      <square32x32logo src="/sp_common/book-template/ohc-common/img/o-icon/favicon-32.png"/>
+      <square152x152logo src="/sp_common/book-template/ohc-common/img/o-icon/favicon-152.png"/>
+      <square270x270logo src="/sp_common/book-template/ohc-common/img/o-icon/favicon-270.png"/>
+      <TileColor>#FFFFFF</TileColor>
+    </tile>
+  </msapplication>
+</browserconfig>
