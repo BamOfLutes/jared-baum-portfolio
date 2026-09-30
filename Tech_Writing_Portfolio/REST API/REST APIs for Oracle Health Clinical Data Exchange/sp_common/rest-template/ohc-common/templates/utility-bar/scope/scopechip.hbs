@@ -1,0 +1,17 @@
+<div>
+  <div id="search-bar-scope" aria-label="Search Scope" role="group">
+    <div id="search-bar-scope-book" class="{{#if scopeIcon}}{{scopeIcon}}{{/if}}" role="none" aria-hidden="true"></div>
+    <div id="white-pipe" style="display: none; height: 16px; width: 1px; background-color: #fcfbfa; opacity: 0.15; padding-right: 1px;"></div>
+    <span id="search-bar-scope-text">{{#if searchBarScopeText}}{{searchBarScopeText}}{{/if}}</span>
+    <button id="search-bar-scope-close" aria-label="Remove"><span id="search-bar-scope-close-icon"></span></button>
+
+    <div id="search-scope-tooltip" class="tooltip tooltip-hide" style="opacity: 1;" role="tooltip">
+      <div class="tooltip-inner">
+        <div id="search-bar-scope-tooltip" aria-hidden="true">
+          <p class="grayed-font">Search is scoped to:</p>
+          <p class="black-font">{{#if searchBarScopeText}}{{searchBarScopeText}}{{/if}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

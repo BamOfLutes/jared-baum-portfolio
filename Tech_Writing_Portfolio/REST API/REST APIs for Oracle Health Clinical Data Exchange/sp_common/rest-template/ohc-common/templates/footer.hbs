@@ -1,0 +1,22 @@
+<div role="contentinfo" id="u10" class="u10 u10v0 " style="position: relative;" data-trackas="footer">
+  <div class="u10w1">
+    <div class="u10w5">
+      <ul class="u10-links u10-min">
+        <li><a target="_blank" data-lbl="copyright" href="{{i18n 'https://docs.oracle.com/pls/topic/lookup?ctx=en/legal&id=cpyr'}}">&#169; Oracle</a></li>
+        <li><a target="_blank" data-lbl="about-oracle" href="{{i18n 'https://www.oracle.com/corporate/'}}">{{i18n 'About Oracle'}}</a></li>
+        <li><a target="_blank" data-lbl="contact-us" href="{{i18n 'https://www.oracle.com/corporate/contact/'}}">{{i18n 'Contact Us'}}</a></li>
+        <li><a target="_blank" data-lbl="products-a-z" href="https://docs.oracle.com/en/browseall.html">Products A-Z</a></li>
+        <li><a target="_blank" data-lbl="terms-of-use-and-privacy" href="{{i18n 'https://www.oracle.com/legal/privacy/'}}">{{i18n 'Terms of Use & Privacy'}}</a></li>
+        <li>
+          <div aria-label="Open a new modal to " id="teconsent"></div>
+        </li>
+        {{#if_mt}}
+        <li><a target="_blank" aria-label="Advertisement Choices"  data-lbl="ad-choices" href="{{i18n 'https://www.oracle.com/legal/privacy/advertising-privacy-policy.html'}}">{{i18n 'Ad Choices'}}</a></li>
+        <li class="u10last"><a href="{{i18n 'translation-survey'}}" onclick="window.open('{{i18n 'translation-survey'}}', '{{i18n 'Machine Translation Feeback Form'}}', 'width=600,height=480');return false;">{{i18n 'Machine Translation Feedback'}}</a></li>
+        {{else}}
+        <li class="u10last"><a target="_blank" aria-label="Advertisement Choices"  data-lbl="ad-choices" href="{{i18n 'https://www.oracle.com/legal/privacy/advertising-privacy-policy.html'}}">{{i18n 'Ad Choices'}}</a></li>
+        {{/if_mt}}
+      </ul>
+    </div>
+  </div>
+</div>

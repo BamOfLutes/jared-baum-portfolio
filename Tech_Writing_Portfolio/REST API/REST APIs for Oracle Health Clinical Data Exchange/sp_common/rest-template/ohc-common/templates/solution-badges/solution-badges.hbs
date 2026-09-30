@@ -1,0 +1,82 @@
+<div class="col-md-3 col-xl-2 solution-badges hidden-xs hidden-sm hidden-print">
+
+    {{#if modernAppDevelopment}}
+    <div class="modern-app-development-section">
+        <span class="modern-app-development-badge">Modern App Development</span>
+        <div class="modern-app-development-details">
+          <span class="modern-app-development-description">These patterns simplify the architectural decision-making to
+            build and run apps.</span>
+        </div>
+    </div>
+    {{/if}}
+
+    {{#if inspired}}
+    <div class="customer-inspired-section">
+        <span class="customer-inspired-badge">{{i18n 'Customer-inspired'}}</span>
+        <div class="customer-inspired-details">
+          <span class="customer-inspired-description">This pattern is based on a working deployment at a customer
+            site.</span>
+        </div>
+    </div>
+    {{/if}}
+
+    {{#if automation}}
+    <div class="automation-available-section">
+        <span class="automation-available-badge">{{i18n 'Automation Available'}}</span>
+        <div class="automation-available-details">
+            <span class="automation-available-description">You can deploy this pattern using downloadable code or automated
+                provisioning, as described in the Download or Deploy section.</span>
+
+            {{#if deploySection}}
+              {{#each deploySection}}
+                <a class="automation-available-learn" aria-label="Learn more, go to deploy description section"
+                  href="{{this.anchor}}">Learn more</a>
+              {{/each}}
+            {{else}}
+            <a class="automation-available-learn"></a>
+            {{/if}}
+
+            {{#if getDeployToOracleCloud}}
+              {{#each getDeployToOracleCloud}}
+                <a type="button" class="automation-available-button" href="{{this.url}}" target="_blank" role="button"
+                    aria-label="{{i18n 'Deploy to Oracle Cloud'}}" title="{{i18n 'Deploy to Oracle Cloud'}}">
+                    <span class="deploy-oracle"></span>
+                    <span>{{i18n 'Deploy to Oracle Cloud'}}</span>
+                </a>
+              {{/each}}
+            {{/if}}
+
+            {{#if getDeployFromMarketplace}}
+              {{#each getDeployFromMarketplace}}
+                <a type="button" class="automation-available-button" href="{{this.url}}" target="_blank" role="button"
+                    aria-label="{{i18n 'Deploy from Marketplace'}}" title="{{i18n 'Deploy from Marketplace'}}">
+                    <span class="deploy-marketplace"></span>
+                    <span>{{i18n 'Deploy from Marketplace'}}</span>
+                </a>
+              {{/each}}
+            {{/if}}
+
+            {{#if getGoToGitHub}}
+              {{#each getGoToGitHub}}
+                <a type="button" class="automation-available-button" href="{{this.url}}" target="_blank" role="button"
+                    aria-label="{{i18n 'Go to GitHub'}}" title="{{i18n 'Go to GitHub'}}">
+                    <span class="github-image"></span>
+                    <span>{{i18n 'Go to GitHub'}}</span>
+                </a>
+              {{/each}}
+            {{/if}}
+
+            {{#if getCloudFreeTierLink}}
+              {{#each getCloudFreeTierLink}}
+                <div id="disclaimerContainer">
+                  <span class="disclaimerText">Deploying on OCI requires an account. </span>
+                  <span class="disclaimerText"><a class="cloudFreeTier" href="{{this.cloudFreeTier}}" target="_blank">Sign up for Free Tier</a> if you don't have an account.</span>
+                </div>
+              {{/each}}
+            {{/if}}
+
+        </div>
+    </div>
+    {{/if}}
+
+</div>

@@ -1,0 +1,71 @@
+<div class="downloadable-diagram-section" role="group">
+    <button id="downloadableDiagramBtn" class="downloadable-diagram-button" data-toggle="modal"
+        data-target="#downloadableDiagramModal" aria-label="Open the modal of terms of use to download diagram">
+        <span class="download-diagram"></span>
+        Download diagram
+    </button>
+
+    <div id="downloadableDiagramModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title"><strong>Accept Terms of Use</strong></h3>
+                    <div class="modal-intro">
+                        <span>You must accept the Oracle Technology Network License Agreement for Architecture Diagrams
+                            to download this diagram.</span>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-disclaimer">
+                        <span><strong>Additional Permission — Reference Architecture Diagram</strong></span>
+                        <p>The reference architecture diagram you have asked to download is subject to the Oracle Terms
+                            of Use (<a href="https://www.oracle.com/legal/terms.html" target="_blank">
+                                https://www.oracle.com/legal/terms.html</a>), except that, notwithstanding
+                            anything to the contrary in Section 3 thereof, you are permitted to use and edit the
+                            architecture diagram for your internal business purposes solely for the purpose of
+                            facilitating the design and implementation of a similar architecture that meets your
+                            business needs. Except as specifically stated herein, your use of the
+                            <a href="https://docs.oracle.com" target="_blank">https://docs.oracle.com</a> site,
+                            as well as your use of any other Materials that are available for download on
+                            <a href="https://docs.oracle.com" target="_blank"> https://docs.oracle.com</a>
+                            that do not contain this Additional Permission remain subject to the standard Terms of Use.
+                        </p>
+                    </div>
+
+                    <div class="modal-checkbox">
+                        <input type="checkbox" id="acceptOracleTerms" name="termsOfUse" value="accept">
+                        <label for="termsOfUse">
+                            I have reviewed and accept the Oracle Terms of Use.</label>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button id="closeDownloadDiagramModalBtn" type="button" class="btn modal-close-button"
+                        data-dismiss="modal">Close</button>
+                    <button id="downloadDiagramModalBtn" type="button" class="btn modal-disabled-button">
+                        <div class="modal-align-button">
+                            <span id="modalDownloadIcon" class="download-diagram-disabled"></span>
+                            <span>Download diagram</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="downloadable-diagram-div-divider">
+        <span class="downloadable-diagram-divider"></span>
+    </div>
+
+    <span class="downloadable-diagram-info downloadable-hide-tooltip" tabindex="0" role="tooltip" data-placement="auto"
+        aria-label="Help tip. Download this diagram and customize it for your organization. See the included Readme file for more information."
+        data-original-title="Download this diagram and customize it for your organization. See the included Readme file for more information.">
+        <span class="info-diagram"></span>
+    </span>
+
+    <div class="diagram-downloading-toast">
+        <span class="diagram-downloading-check-icon"></span>
+        <span>Diagram downloading</span>
+        <span class="diagram-downloading-close-icon"></span>
+    </div>
+</div>
