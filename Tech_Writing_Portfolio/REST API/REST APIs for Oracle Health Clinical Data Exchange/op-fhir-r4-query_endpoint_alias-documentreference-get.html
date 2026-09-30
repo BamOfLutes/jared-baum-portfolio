@@ -1,0 +1,6346 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>REST APIs for Oracle Health Clinical Data Exchange - Get a list of document references</title>
+		<link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+		<meta name="dcterms.dateCopyrighted" content="2025">
+		<meta name="dcterms.category" content="industries">
+		<meta name="dcterms.identifier" content="G28368-01">
+		<meta name="dcterms.isVersionOf" content="OCDEX">
+		
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+		
+
+        <meta name="description" content="These APIs allow a registered user to access the Oracle Health Clinical Data Exchange data for which they are authorized.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST APIs for Oracle Health Clinical Data Exchange">
+        <meta property="og:description" content="These APIs allow a registered user to access the Oracle Health Clinical Data Exchange data for which they are authorized.">
+        <meta name="generator" content="Oracle REST API Publisher 1.7.0">
+		<meta name="date" content="2025-03-11 18:25:02 UTC">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST APIs for Oracle Health Clinical Data Exchange">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="op-fhir-r4-query_endpoint_alias-documentreference-id-get.html" title="Previous" type="text/html">
+        <link rel="next" href="api-patient.html" title="Next" type="text/html">
+    
+    <meta name="dcterms.created" content="2025-03-11T18:27:39+00:00">
+    <meta name="dcterms.title" content="REST APIs for Oracle Health Clinical Data Exchange">
+    <meta name="dcterms.product" content="en/industries/health/clinical-data-exchange">
+    <meta name="dcterms.release" content="Latest Release">
+  <script id="ssot-metadata" type="application/json"> {"primary":{"category":{"short_name":"industries","element_name":"Industries","display_in_url":true},"suite":{"short_name":"health","element_name":"Health","display_in_url":true},"product_group":{"short_name":"healthcare","element_name":"Healthcare Applications","display_in_url":false},"product":{"short_name":"clinical-data-exchange","element_name":"Oracle Health Clinical Data Exchange","display_in_url":true},"release":{"short_name":"latest","element_name":"Latest Release","display_in_url":false}}} </script>
+    <script type="application/ld+json"> {"@context":"https://schema.org","@type":"WebPage","name":"REST APIs for Oracle Health Clinical Data Exchange - Get a list of document references","description":"These APIs allow a registered user to access the Oracle Health Clinical Data Exchange data for which they are authorized.","datePublished":"2025-03-11 CST","dateModified":"2025-03-11 CST"} </script>
+    </head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="op-fhir-r4-query_endpoint_alias-documentreference-id-get.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="api-patient.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header id="top">
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST APIs for Oracle Health Clinical Data Exchange</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-documentreference.html">DocumentReference</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                
+                <div>
+                	<div class="dropdown btn-group pull-right" style="clear: right;">
+                		<button id="dLabel" class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Jump to <span class="caret"></span>
+                		</button>
+      					<ul class="dropdown-menu" aria-labelledby="dLabel">
+          					<li><a href="#request" data-toggle="ignore">Request</a></li>
+          					<li><a href="#response" data-toggle="ignore">Response</a></li>
+          					
+      					</ul>
+    				</div>
+     				<h2>Get a list of document references</h2>
+     			</div>
+                
+                <div>
+                    <div class="label label-get text-uppercase">get</div>
+                    <p><strong>/fhir/r4/{query_endpoint_alias}/DocumentReference</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description"><p>This path retrieves documents using the patient ID, the source patient medical record number (MRN), and the specific encounter or visit number.</p> <p><strong>Use the following query parameters to retrieve the generated Consolidated Clinical Document Architecture (C-CDA) documents for a given patient within a specified date range:</strong></p> <ul> <li><strong>Patient (required)</strong>: cdex-patient-id</li> <li><strong>Date (conditional)</strong>: The date range within which the encounter occurs.</li> </ul> <p><em>Example:</em> <code>DocumentReference?patient=1979464&date=ge2023-11-04</code></p> <p><strong>Use the following query parameters to retrieve the generated C-CDA documents for a given patient identifier within a specified date range:</strong></p> <ul> <li><strong>Patient identifier (required)</strong>: The patient's MRN. The format includes the assigning authority and the value separated by a vertical bar (|). For example, aa|value.</li> <li><strong>Date (conditional)</strong>: The date range within which the encounter occurs.</li> </ul> <p><em>Example:</em> <code>DocumentReference?patient.identifier=891c71549f4a4bb439b4de8a532f155c_2.16.840.1.113883.3.995.10.1.1|8133&date=ge2023-01-01</code></p> <p><strong>Use the following query parameters to retrieve the generated C-CDA documents for a given patient encounter or account number:</strong></p> <ul> <li><strong>Patient (required)</strong>: The Oracle Health Clinical Data Exchange patient ID.</li> <li><strong>Encounter (conditional)</strong>: The patient account number. The format includes the assigning authority and the value separated by a vertical bar (|). For example, aa|value.</li> </ul> <p><em>Example:</em> <code>DocumentReference?patient={global-patient-id}&encounter={aa|fin}</code></p> <h4>Post-filter request parameters:</h4> <p>When responding to a request, the Oracle Health Clinical Data Exchange FHIR server first retrieves all results that match your primary search parameters above, then the server filters those results based on the additional post-filtered parameters that you have specified.</p> <p>The post-filtering parameters are <strong>status</strong>, <strong>category</strong>, <strong>type</strong>, <strong>setting</strong>, <strong>facility</strong>, <strong>security-label</strong>, and <strong>format</strong>.</p> <p><strong>Note:</strong></p> <ul> <li>The DocumentReference does not retrieve existing C-CDA documents for a patient. Instead, it generates new C-CDA documents based on the current clinical content in the system. This functionality prevents communicating outdated data, and also ensures that the C-CDA content contains only data that the requesting payer is authorized to retrieve.</li> <li>Separate C-CDAs are generated for each encounter context from the system in the DocumentReference response.</li> </ul> </div>
+
+                <h3 id="request">Request</h3>
+                
+
+                
+
+                
+
+
+                
+                <div class="h5">Query Parameters</div>
+                <div class="schema-container">
+                    <ul class="schema-properties">
+                        
+                        <li><a role="button" data-toggle="collapse" href="#request-query-param-0" aria-expanded="false" aria-controls="request-query-param-0">
+                        category: string
+
+                        </a>
+                        <div class="collapse" id="request-query-param-0">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><p>The DocumentEntry class code (the LOINC code, must be passed).<br> - The format for this field requires both the code and system to be passed with the separator '^^'.<br> - For example: category=34133-9^^2.16.840.1.113883.6.1</p> </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                        </li>
+                        
+                        <li><a role="button" data-toggle="collapse" href="#request-query-param-1" aria-expanded="false" aria-controls="request-query-param-1">
+                        date (Conditional): string(date)
+
+                        </a>
+                        <div class="collapse" id="request-query-param-1">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><p>The date range within which the encounter occurs. <br> <b>Note:</b> <br> - The Time component is not supported. <br> - Only the <b>ge</b> and <b>le</b> prefixes are supported. <br> - This value can be provided in the following conditions: <br> &nbsp;&nbsp;- Once with an appropriate prefix representing the earliest date. <br> &nbsp;&nbsp;For example, <i>date=ge2023-01-01</i>. <br> &nbsp;&nbsp;- Or, twice with appropriate prefixes to indicate a specific range. <br> &nbsp;&nbsp;For example, <i>date=ge2023-01-01&date=le2024-01-01</i>.</p> </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                        </li>
+                        
+                        <li><a role="button" data-toggle="collapse" href="#request-query-param-2" aria-expanded="false" aria-controls="request-query-param-2">
+                        encounter (Conditional): string
+
+                        </a>
+                        <div class="collapse" id="request-query-param-2">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><p>The encounter context. <br>The format includes the assigning authority and the value separated by a vertical bar (|). <br>For example, <i>aa|value</i>. <br> The assigning authority is required.</p> </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                        </li>
+                        
+                        <li><a role="button" data-toggle="collapse" href="#request-query-param-3" aria-expanded="false" aria-controls="request-query-param-3">
+                        format: string
+
+                        </a>
+                        <div class="collapse" id="request-query-param-3">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><p>The DocumentEntry format code (that is, the format and content rules for the document).<br> - The format for this field requires both the code and system to be passed with the separator '^^'.<br> - For example: format=urn:hl7-org:sdwg:ccda-nonXMLBody:2.1^^1.3.6.1.4.1.19376.1.2.3</p> </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                        </li>
+                        
+                        <li><a role="button" data-toggle="collapse" href="#request-query-param-4" aria-expanded="false" aria-controls="request-query-param-4">
+                        patient(required): string
+
+                        </a>
+                        <div class="collapse" id="request-query-param-4">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><p>The patient that is the subject of the documents. <br> - The patient is required if <b>patient.identifier</b> is not used.</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                        </li>
+                        
+                        <li><a role="button" data-toggle="collapse" href="#request-query-param-5" aria-expanded="false" aria-controls="request-query-param-5">
+                        patient.identifier(required): string
+
+                        </a>
+                        <div class="collapse" id="request-query-param-5">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><p>The patient identifier that is the subject of the documents. <br> - The patient identifier is required if <b>patient</b> is not used. <br> - The patient's MRN is supported. The format includes the assigning authority and the value separated by a vertical bar (|). <br> For example, <i>aa|value</i>.</p> </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                        </li>
+                        
+                        <li><a role="button" data-toggle="collapse" href="#request-query-param-6" aria-expanded="false" aria-controls="request-query-param-6">
+                        security-label: string
+
+                        </a>
+                        <div class="collapse" id="request-query-param-6">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><p>The DocumentEntry confidentiality code (that is, the document security-tags).<br> - The format for this field requires both the code and system to be passed with the separator '^^'.<br> - For example: security-label=N^^2.16.840.1.113883.5.25</p> </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                        </li>
+                        
+                        <li><a role="button" data-toggle="collapse" href="#request-query-param-7" aria-expanded="false" aria-controls="request-query-param-7">
+                        setting: string
+
+                        </a>
+                        <div class="collapse" id="request-query-param-7">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><p>The DocumentEntry practice setting code (that is, additional details about where the content was created, for example, the clinical specialty).<br> - The format for this field requires both the code and system to be passed with the separator '^^'.<br> - For example: setting=394802001-9^^2.16.840.1.113883.6.96</p> </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                        </li>
+                        
+                        <li><a role="button" data-toggle="collapse" href="#request-query-param-8" aria-expanded="false" aria-controls="request-query-param-8">
+                        status: string
+
+                        </a>
+                        <div class="collapse" id="request-query-param-8">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The current and previous status in current status | superseded status format.</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                        </li>
+                        
+                        <li><a role="button" data-toggle="collapse" href="#request-query-param-9" aria-expanded="false" aria-controls="request-query-param-9">
+                        type: string
+
+                        </a>
+                        <div class="collapse" id="request-query-param-9">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><p>DocumentEntry type code (the LOINC code, must be passed).<br> - The format for this field requires both the code and system to be passed with the separator '^^'.<br> - For example: type=34133-9^^2.16.840.1.113883.6.1</p> </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                        </li>
+                        
+                    </ul>
+                    
+                </div>
+                
+
+
+                
+                <div class="h5">Header Parameters</div>
+                <div class="schema-container">
+                    <ul class="schema-properties">
+                        
+                        <li><a role="button" data-toggle="collapse" href="#request-header-param-authorization" aria-expanded="false" aria-controls="request-header-param-authorization">
+                        authorization(required): string
+                        </a>
+                        <div class="collapse" id="request-header-param-authorization">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>This string contains the credentials to authenticate a consumer to the service. This value should be the OAuth 2.0 bearer token.</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                        </li>
+                        
+                    </ul>
+                    
+                </div>
+                
+
+
+                
+
+
+                
+
+                
+
+                
+                
+                <a style="float: right" href="#top">Back to Top</a>
+
+                <h3 id="response">Response</h3>
+
+                
+                
+                <div class="h5">Supported Media Types</div>
+                <ul class="media-types">
+                    
+                    <li>application/json</li>
+                    
+                </ul>
+                
+                
+
+
+
+                
+                <div class="response">
+                <h4 class="response-code range-200">200 Response</h4>
+                <div class="response-body">
+                <div><p>Success<br> - The response would include all the documents reference matched.</p> </div>
+
+                
+                <div class="h5">Headers</div>
+                <div class="schema-container">
+                    <ul class="schema-properties">
+                        
+                        <li><a role="button" data-toggle="collapse" href="#200-response-header-X-Request-Id" aria-expanded="false" aria-controls="200-response-header-X-Request-Id">
+                        X-Request-Id: string
+                        </a>
+                        <div class="collapse" id="200-response-header-X-Request-Id">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Oracle troubleshooting identifier</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                        </li>
+                        
+                        <li><a role="button" data-toggle="collapse" href="#200-response-header-opc-request-id" aria-expanded="false" aria-controls="200-response-header-opc-request-id">
+                        opc-request-id: string
+                        </a>
+                        <div class="collapse" id="200-response-header-opc-request-id">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Oracle troubleshooting identifier</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                        </li>
+                        
+                    </ul>
+                    
+                </div>
+                
+
+
+                
+                    <div class="entity">
+                    <div class="h5 hidden-print">Body (<span class="schema-path"></span>)</div>
+
+
+                    <div class="schema-container">
+                    
+                    <div id="200-definitions-DocumentReference" class="swagger-schema">
+    <div class="panel-heading">Root Schema : DocumentReference</div>
+    
+      <div class="schema-type">Type: <code>object</code></div>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div>The DocumentReference FHIR resource.</div>
+    
+
+    
+
+    
+
+    
+    <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+        <ul class="schema-properties">
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Reference-properties-authenticator-0" aria-expanded="false" aria-controls="200-definitions-Reference-properties-authenticator-0">
+            authenticator: 
+            </a> <a href="#200-definitions-Reference" role="button" class="btn btn-default btn-sm btn-xsm">Reference</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-Reference-properties-authenticator-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-DocumentReference-properties-author-properties-author-0" aria-expanded="false" aria-controls="200-definitions-DocumentReference-properties-author-properties-author-0">
+            author: 
+            array </a> <a href="#200-definitions-DocumentReference-properties-author" role="button" class="btn btn-default btn-sm btn-xsm">author</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-DocumentReference-properties-author-properties-author-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">The Practitioner who authored the document.</div>
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-DocumentReference-properties-category-properties-category-0" aria-expanded="false" aria-controls="200-definitions-DocumentReference-properties-category-properties-category-0">
+            category: 
+            array </a> <a href="#200-definitions-DocumentReference-properties-category" role="button" class="btn btn-default btn-sm btn-xsm">category</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-DocumentReference-properties-category-properties-category-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">The document category, displayed as Summary of Episode Note in the generated C-CDA documents. 
+ Preferred valueset https://hl7.org/fhir/R4/valueset-document-classcodes.html</div>
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-DocumentReference-properties-content-properties-content-0" aria-expanded="false" aria-controls="200-definitions-DocumentReference-properties-content-properties-content-0">
+            content: 
+            object </a> <a href="#200-definitions-DocumentReference-properties-content" role="button" class="btn btn-default btn-sm btn-xsm">content</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-DocumentReference-properties-content-properties-content-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">The document referenced.</div>
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-DocumentReference-properties-context-properties-context-0" aria-expanded="false" aria-controls="200-definitions-DocumentReference-properties-context-properties-context-0">
+            context: 
+            object </a> <a href="#200-definitions-DocumentReference-properties-context" role="button" class="btn btn-default btn-sm btn-xsm">context</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-DocumentReference-properties-context-properties-context-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Reference-properties-custodian-0" aria-expanded="false" aria-controls="200-definitions-Reference-properties-custodian-0">
+            custodian: 
+            </a> <a href="#200-definitions-Reference" role="button" class="btn btn-default btn-sm btn-xsm">Reference</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-Reference-properties-custodian-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-DocumentReference-properties-date-properties-date-0" aria-expanded="false" aria-controls="200-definitions-DocumentReference-properties-date-properties-date-0">
+            date: 
+            string(instant)</a>
+            <div class="collapse schema-summary" id="200-definitions-DocumentReference-properties-date-properties-date-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The data and time that this document was created.</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-DocumentReference-properties-description-properties-description-0" aria-expanded="false" aria-controls="200-definitions-DocumentReference-properties-description-properties-description-0">
+            description: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-DocumentReference-properties-description-properties-description-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The description of the document.</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-DocumentReference-properties-docStatus-properties-docStatus-0" aria-expanded="false" aria-controls="200-definitions-DocumentReference-properties-docStatus-properties-docStatus-0">
+            docStatus: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-DocumentReference-properties-docStatus-properties-docStatus-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>preliminary | final | amended | entered-in-error</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-DocumentReference-properties-id-properties-id-0" aria-expanded="false" aria-controls="200-definitions-DocumentReference-properties-id-properties-id-0">
+            id: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-DocumentReference-properties-id-properties-id-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The logical ID of this artifact.</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-DocumentReference-properties-identifier-properties-identifier-0" aria-expanded="false" aria-controls="200-definitions-DocumentReference-properties-identifier-properties-identifier-0">
+            identifier: 
+            array </a> <a href="#200-definitions-DocumentReference-properties-identifier" role="button" class="btn btn-default btn-sm btn-xsm">identifier</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-DocumentReference-properties-identifier-properties-identifier-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">Other identifiers for the document.</div>
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Identifier-properties-masterIdentifier-0" aria-expanded="false" aria-controls="200-definitions-Identifier-properties-masterIdentifier-0">
+            masterIdentifier: 
+            </a> <a href="#200-definitions-Identifier" role="button" class="btn btn-default btn-sm btn-xsm">Identifier</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-Identifier-properties-masterIdentifier-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-DocumentReference-properties-resourceType-properties-resourceType-0" aria-expanded="false" aria-controls="200-definitions-DocumentReference-properties-resourceType-properties-resourceType-0">
+            resourceType: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-DocumentReference-properties-resourceType-properties-resourceType-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The resource type is DocumentReference.</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-DocumentReference-properties-securityLabel-properties-securityLabel-0" aria-expanded="false" aria-controls="200-definitions-DocumentReference-properties-securityLabel-properties-securityLabel-0">
+            securityLabel: 
+            array </a> <a href="#200-definitions-DocumentReference-properties-securityLabel" role="button" class="btn btn-default btn-sm btn-xsm">securityLabel</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-DocumentReference-properties-securityLabel-properties-securityLabel-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">The security tag hard-coded as Normal is displayed on the generated C-CDA documents.</div>
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-DocumentReference-properties-status-properties-status-0" aria-expanded="false" aria-controls="200-definitions-DocumentReference-properties-status-properties-status-0">
+            status: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-DocumentReference-properties-status-properties-status-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>current | superseded | entered-in-error 
+ The status is diplayed as 'current' in the generated C-CDA documents.</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-DocumentReference-properties-subject-properties-subject-0" aria-expanded="false" aria-controls="200-definitions-DocumentReference-properties-subject-properties-subject-0">
+            subject: 
+            object </a> <a href="#200-definitions-DocumentReference-properties-subject" role="button" class="btn btn-default btn-sm btn-xsm">subject</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-DocumentReference-properties-subject-properties-subject-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-DocumentReference-properties-type-properties-type-0" aria-expanded="false" aria-controls="200-definitions-DocumentReference-properties-type-properties-type-0">
+            type: 
+            array </a> <a href="#200-definitions-DocumentReference-properties-type" role="button" class="btn btn-default btn-sm btn-xsm">type</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-DocumentReference-properties-type-properties-type-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">The type of document, displayed as Summary of Episode Note in the generated C-CDA documents. 
+ Preferred valueset https://hl7.org/fhir/R4/valueset-c80-doc-typecodes.html</div>
+
+
+                
+            </div>
+            </li>
+            
+        </ul>
+        <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;description&quot;:&quot;The DocumentReference FHIR resource.&quot;,
+    &quot;type&quot;:&quot;object&quot;,
+    &quot;properties&quot;:{
+        &quot;resourceType&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;The resource type is DocumentReference.&quot;
+        },
+        &quot;id&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;The logical ID of this artifact.&quot;
+        },
+        &quot;masterIdentifier&quot;:{
+            &quot;type&quot;:&quot;object&quot;,
+            &quot;description&quot;:&quot;The Master Version Specific Identifier.&quot;,
+            &quot;$ref&quot;:&quot;#/definitions/Identifier&quot;
+        },
+        &quot;identifier&quot;:{
+            &quot;type&quot;:&quot;array&quot;,
+            &quot;description&quot;:&quot;Other identifiers for the document.&quot;,
+            &quot;items&quot;:{
+                &quot;$ref&quot;:&quot;#/definitions/Identifier&quot;
+            }
+        },
+        &quot;status&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;current | superseded | entered-in-error \r\n The status is diplayed as &#x27;current&#x27; in the generated C-CDA documents.&quot;
+        },
+        &quot;docStatus&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;preliminary | final | amended | entered-in-error&quot;
+        },
+        &quot;type&quot;:{
+            &quot;type&quot;:&quot;array&quot;,
+            &quot;description&quot;:&quot;The type of document, displayed as Summary of Episode Note in the generated C-CDA documents. \r\n Preferred valueset https://hl7.org/fhir/R4/valueset-c80-doc-typecodes.html&quot;,
+            &quot;items&quot;:{
+                &quot;$ref&quot;:&quot;#/definitions/CodeableConcept&quot;
+            }
+        },
+        &quot;category&quot;:{
+            &quot;type&quot;:&quot;array&quot;,
+            &quot;description&quot;:&quot;The document category, displayed as Summary of Episode Note in the generated C-CDA documents. \r\n Preferred valueset https://hl7.org/fhir/R4/valueset-document-classcodes.html&quot;,
+            &quot;items&quot;:{
+                &quot;$ref&quot;:&quot;#/definitions/CodeableConcept&quot;
+            }
+        },
+        &quot;subject&quot;:{
+            &quot;type&quot;:&quot;object&quot;,
+            &quot;properties&quot;:{
+                &quot;reference&quot;:{
+                    &quot;type&quot;:&quot;string&quot;,
+                    &quot;description&quot;:&quot;The reference to the Oracle Health Clinical Data Exchange patient ID.&quot;
+                }
+            }
+        },
+        &quot;date&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;The data and time that this document was created.&quot;,
+            &quot;format&quot;:&quot;instant&quot;
+        },
+        &quot;author&quot;:{
+            &quot;type&quot;:&quot;array&quot;,
+            &quot;description&quot;:&quot;The Practitioner who authored the document.&quot;,
+            &quot;items&quot;:{
+                &quot;$ref&quot;:&quot;#/definitions/Reference&quot;
+            }
+        },
+        &quot;authenticator&quot;:{
+            &quot;type&quot;:&quot;object&quot;,
+            &quot;$ref&quot;:&quot;#/definitions/Reference&quot;,
+            &quot;description&quot;:&quot;The Practitioner who legally authenticated the document.&quot;
+        },
+        &quot;custodian&quot;:{
+            &quot;type&quot;:&quot;object&quot;,
+            &quot;$ref&quot;:&quot;#/definitions/Reference&quot;,
+            &quot;description&quot;:&quot;The Organization from which the clinical data was used to generate a C-CDA document.&quot;
+        },
+        &quot;description&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;The description of the document.&quot;
+        },
+        &quot;securityLabel&quot;:{
+            &quot;type&quot;:&quot;array&quot;,
+            &quot;description&quot;:&quot;The security tag hard-coded as Normal is displayed on the generated C-CDA documents.&quot;,
+            &quot;items&quot;:{
+                &quot;$ref&quot;:&quot;#/definitions/CodeableConcept&quot;
+            }
+        },
+        &quot;content&quot;:{
+            &quot;type&quot;:&quot;object&quot;,
+            &quot;description&quot;:&quot;The document referenced.&quot;,
+            &quot;properties&quot;:{
+                &quot;attachment&quot;:{
+                    &quot;type&quot;:&quot;object&quot;,
+                    &quot;description&quot;:&quot;The location where you can access the document.&quot;,
+                    &quot;properties&quot;:{
+                        &quot;contentType&quot;:{
+                            &quot;type&quot;:&quot;string&quot;,
+                            &quot;description&quot;:&quot;The mime type of the content, including the character set and other information.&quot;
+                        },
+                        &quot;language&quot;:{
+                            &quot;type&quot;:&quot;string&quot;,
+                            &quot;description&quot;:&quot;The human language of the content.&quot;
+                        },
+                        &quot;url&quot;:{
+                            &quot;type&quot;:&quot;string&quot;,
+                            &quot;description&quot;:&quot;The URI where the data is available.&quot;
+                        },
+                        &quot;size&quot;:{
+                            &quot;type&quot;:&quot;number&quot;,
+                            &quot;description&quot;:&quot;The number of bytes of content (if the URL is provided).&quot;
+                        },
+                        &quot;hash&quot;:{
+                            &quot;type&quot;:&quot;string&quot;,
+                            &quot;description&quot;:&quot;The hash of the data (for example, sha-1, base64ed).&quot;
+                        },
+                        &quot;title&quot;:{
+                            &quot;type&quot;:&quot;string&quot;,
+                            &quot;description&quot;:&quot;The label that is displayed in place of the data.&quot;
+                        },
+                        &quot;creation&quot;:{
+                            &quot;type&quot;:&quot;string&quot;,
+                            &quot;format&quot;:&quot;date-time&quot;,
+                            &quot;description&quot;:&quot;The date that the attachment was initially created.&quot;
+                        }
+                    }
+                },
+                &quot;format&quot;:{
+                    &quot;type&quot;:&quot;object&quot;,
+                    &quot;$ref&quot;:&quot;#/definitions/Coding&quot;,
+                    &quot;description&quot;:&quot;The format and content rules for the document. \r\n https://hl7.org/fhir/R4/valueset-formatcodes.html&quot;
+                }
+            }
+        },
+        &quot;context&quot;:{
+            &quot;type&quot;:&quot;object&quot;,
+            &quot;properties&quot;:{
+                &quot;encounter&quot;:{
+                    &quot;type&quot;:&quot;object&quot;,
+                    &quot;description&quot;:&quot;The context of the document content.&quot;,
+                    &quot;$ref&quot;:&quot;#/definitions/Reference&quot;
+                },
+                &quot;period&quot;:{
+                    &quot;type&quot;:&quot;object&quot;,
+                    &quot;description&quot;:&quot;The time of service that is being documented.&quot;,
+                    &quot;$ref&quot;:&quot;#/definitions/Period&quot;
+                },
+                &quot;practiceSetting&quot;:{
+                    &quot;type&quot;:&quot;object&quot;,
+                    &quot;description&quot;:&quot;Additional details about where the content was created (for example, the clinical specialty).&quot;,
+                    &quot;$ref&quot;:&quot;#/definitions/CodeableConcept&quot;
+                },
+                &quot;sourcePatientInfo&quot;:{
+                    &quot;type&quot;:&quot;object&quot;,
+                    &quot;description&quot;:&quot;This object retrieves the patient MRN from the source system.&quot;,
+                    &quot;$ref&quot;:&quot;#/definitions/Reference&quot;
+                }
+            }
+        }
+    },
+    &quot;example&quot;:&quot;{\n  \&quot;fullUrl\&quot;: \&quot;https://cell1.query.stage.cdexhub.us-ashburn-1.oci.oraclecloud.com/fhir/r4/e48ebcb3-4027-5c58-ac57-e866afc7be0c/DocumentReference/urn:uuid:cca32c1d-8301-4ed7-ac8e-671cb11ff968\&quot;,\n  \&quot;resource\&quot;: {\n      \&quot;resourceType\&quot;: \&quot;DocumentReference\&quot;,\n      \&quot;id\&quot;: \&quot;urn:uuid:cca32c1d-8301-4ed7-ac8e-671cb11ff968\&quot;,\n      \&quot;masterIdentifier\&quot;: {\n          \&quot;system\&quot;: \&quot;urn:ietf:rfc:3986\&quot;,\n          \&quot;value\&quot;: \&quot;1.3.6.1.4.1.21367.2010.4381289\&quot;\n      },\n      \&quot;identifier\&quot;: [\n          {\n              \&quot;use\&quot;: \&quot;official\&quot;,\n              \&quot;system\&quot;: \&quot;urn:ietf:rfc:3986\&quot;,\n              \&quot;value\&quot;: \&quot;urn:uuid:cca32c1d-8301-4ed7-ac8e-671cb11ff968\&quot;\n          }\n      ],\n      \&quot;status\&quot;: \&quot;current\&quot;,\n      \&quot;docStatus\&quot;: \&quot;final\&quot;,\n      \&quot;type\&quot;: {\n          \&quot;coding\&quot;: [\n              {\n                  \&quot;system\&quot;: \&quot;http://loinc.org\&quot;,\n                  \&quot;code\&quot;: \&quot;34133-9\&quot;,\n                  \&quot;display\&quot;: \&quot;Summary of Episode Note\&quot;\n              }\n          ]\n      },\n      \&quot;category\&quot;: [\n          {\n              \&quot;coding\&quot;: [\n                  {\n                      \&quot;system\&quot;: \&quot;http://loinc.org\&quot;,\n                      \&quot;code\&quot;: \&quot;34133-9\&quot;,\n                      \&quot;display\&quot;: \&quot;Summary of Episode Note\&quot;\n                  }\n              ]\n          }\n      ],\n      \&quot;subject\&quot;: {\n          \&quot;reference\&quot;: \&quot;https://cell1.query.stage.cdexhub.us-ashburn-1.oci.oraclecloud.com/fhir/r4/e48ebcb3-4027-5c58-ac57-e866afc7be0c/Patient/2586450001\&quot;,\n          \&quot;display\&quot;: \&quot;PEREZ JUAN\&quot;\n      },\n      \&quot;date\&quot;: \&quot;2024-09-26\&quot;,\n      \&quot;author\&quot;: [\n          {\n              \&quot;type\&quot;: \&quot;Practitioner\&quot;,\n              \&quot;identifier\&quot;: {\n                  \&quot;use\&quot;: \&quot;official\&quot;,\n                  \&quot;type\&quot;: {\n                      \&quot;coding\&quot;: [\n                          {\n                              \&quot;system\&quot;: \&quot;http://terminology.hl7.org/CodeSystem/v2-0203\&quot;,\n                              \&quot;code\&quot;: \&quot;NPI\&quot;,\n                              \&quot;display\&quot;: \&quot;National provider identifier\&quot;\n                          }\n                      ]\n                  },\n                  \&quot;system\&quot;: \&quot;urn:ietf:rfc:3986\&quot;,\n                  \&quot;value\&quot;: \&quot;Cerner HIE\&quot;\n              },\n              \&quot;display\&quot;: \&quot;Cerner HIE\&quot;\n          }\n      ],\n      \&quot;authenticator\&quot;: {\n          \&quot;type\&quot;: \&quot;Practitioner\&quot;,\n          \&quot;identifier\&quot;: {\n              \&quot;use\&quot;: \&quot;official\&quot;,\n              \&quot;type\&quot;: {\n                  \&quot;coding\&quot;: [\n                      {\n                          \&quot;system\&quot;: \&quot;http://terminology.hl7.org/CodeSystem/v2-0203\&quot;,\n                          \&quot;code\&quot;: \&quot;NPI\&quot;,\n                          \&quot;display\&quot;: \&quot;National provider identifier\&quot;\n                      }\n                  ]\n              },\n              \&quot;value\&quot;: \&quot;Cerner HIE\&quot;\n          },\n          \&quot;display\&quot;: \&quot;Cerner HIE\&quot;\n      },\n      \&quot;custodian\&quot;: {\n          \&quot;type\&quot;: \&quot;Organization\&quot;,\n          \&quot;identifier\&quot;: {\n              \&quot;use\&quot;: \&quot;official\&quot;,\n              \&quot;type\&quot;: {\n                  \&quot;coding\&quot;: [\n                      {\n                          \&quot;system\&quot;: \&quot;urn:ietf:rfc:3986\&quot;,\n                          \&quot;code\&quot;: \&quot;urn:oid\&quot;,\n                          \&quot;display\&quot;: \&quot;OID\&quot;\n                      }\n                  ]\n              },\n              \&quot;value\&quot;: \&quot;\&quot;\n          },\n          \&quot;display\&quot;: \&quot;Model Clinic 2\&quot;\n      },\n      \&quot;description\&quot;: \&quot;CCD for Encounter: 18103-2.16.840.1.113883.3.995.10.2.1\&quot;,\n      \&quot;securityLabel\&quot;: [\n          {\n              \&quot;coding\&quot;: [\n                  {\n                      \&quot;system\&quot;: \&quot;2.16.840.1.113883.5.25\&quot;,\n                      \&quot;code\&quot;: \&quot;N\&quot;,\n                      \&quot;display\&quot;: \&quot;Normal\&quot;\n                  }\n              ]\n          }\n      ],\n      \&quot;content\&quot;: [\n          {\n              \&quot;attachment\&quot;: {\n                  \&quot;contentType\&quot;: \&quot;text/xml\&quot;,\n                  \&quot;language\&quot;: \&quot;en-us\&quot;,\n                  \&quot;url\&quot;: \&quot;https://cell1.query.stage.cdexhub.us-ashburn-1.oci.oraclecloud.com/fhir/r4/e48ebcb3-4027-5c58-ac57-e866afc7be0c/Binary/urn:uuid:cca32c1d-8301-4ed7-ac8e-671cb11ff968\&quot;,\n                  \&quot;size\&quot;: 108842,\n                  \&quot;hash\&quot;: \&quot;f49999cd60913a68f8b89d7f431ee1ef24853b73\&quot;,\n                  \&quot;creation\&quot;: \&quot;2024-09-26\&quot;\n              },\n              \&quot;format\&quot;: {\n                  \&quot;system\&quot;: \&quot;1.3.6.1.4.1.19376.1.2.3\&quot;,\n                  \&quot;code\&quot;: \&quot;urn:ihe:pcc:xphr:2007\&quot;,\n                  \&quot;display\&quot;: \&quot;HL7 CCD Document\&quot;\n              }\n          }\n      ],\n      \&quot;context\&quot;: {\n          \&quot;encounter\&quot;: [\n              {\n                  \&quot;identifier\&quot;: {\n                      \&quot;system\&quot;: \&quot;891c71549f4a4bb439b4de8a532f155c_2.16.840.1.113883.3.995.10.2.1\&quot;,\n                      \&quot;value\&quot;: \&quot;18103\&quot;\n                  }\n              }\n          ],\n          \&quot;period\&quot;: {\n              \&quot;end\&quot;: \&quot;2024-05-13\&quot;\n          },\n          \&quot;practiceSetting\&quot;: {\n              \&quot;coding\&quot;: [\n                  {\n                      \&quot;system\&quot;: \&quot;2.16.840.1.113883.6.96\&quot;,\n                      \&quot;code\&quot;: \&quot;394802001\&quot;,\n                      \&quot;display\&quot;: \&quot;General Medicine\&quot;\n                  }\n              ]\n          },\n          \&quot;sourcePatientInfo\&quot;: {\n              \&quot;identifier\&quot;: {\n                  \&quot;system\&quot;: \&quot;891c71549f4a4bb439b4de8a532f155c_2.16.840.1.113883.3.995.10.1.1\&quot;,\n                  \&quot;value\&quot;: \&quot;8133\&quot;\n              },\n              \&quot;display\&quot;: \&quot;PEREZ JUAN\&quot;\n          }\n      }\n  }\n}\n&quot;
+}</code></pre>
+    
+    
+
+    
+
+    
+
+    
+
+    
+    <div id="200-definitions-DocumentReference-example">Example:<pre><code>{
+  &quot;fullUrl&quot;: &quot;https://cell1.query.stage.cdexhub.us-ashburn-1.oci.oraclecloud.com/fhir/r4/e48ebcb3-4027-5c58-ac57-e866afc7be0c/DocumentReference/urn:uuid:cca32c1d-8301-4ed7-ac8e-671cb11ff968&quot;,
+  &quot;resource&quot;: {
+      &quot;resourceType&quot;: &quot;DocumentReference&quot;,
+      &quot;id&quot;: &quot;urn:uuid:cca32c1d-8301-4ed7-ac8e-671cb11ff968&quot;,
+      &quot;masterIdentifier&quot;: {
+          &quot;system&quot;: &quot;urn:ietf:rfc:3986&quot;,
+          &quot;value&quot;: &quot;1.3.6.1.4.1.21367.2010.4381289&quot;
+      },
+      &quot;identifier&quot;: [
+          {
+              &quot;use&quot;: &quot;official&quot;,
+              &quot;system&quot;: &quot;urn:ietf:rfc:3986&quot;,
+              &quot;value&quot;: &quot;urn:uuid:cca32c1d-8301-4ed7-ac8e-671cb11ff968&quot;
+          }
+      ],
+      &quot;status&quot;: &quot;current&quot;,
+      &quot;docStatus&quot;: &quot;final&quot;,
+      &quot;type&quot;: {
+          &quot;coding&quot;: [
+              {
+                  &quot;system&quot;: &quot;http://loinc.org&quot;,
+                  &quot;code&quot;: &quot;34133-9&quot;,
+                  &quot;display&quot;: &quot;Summary of Episode Note&quot;
+              }
+          ]
+      },
+      &quot;category&quot;: [
+          {
+              &quot;coding&quot;: [
+                  {
+                      &quot;system&quot;: &quot;http://loinc.org&quot;,
+                      &quot;code&quot;: &quot;34133-9&quot;,
+                      &quot;display&quot;: &quot;Summary of Episode Note&quot;
+                  }
+              ]
+          }
+      ],
+      &quot;subject&quot;: {
+          &quot;reference&quot;: &quot;https://cell1.query.stage.cdexhub.us-ashburn-1.oci.oraclecloud.com/fhir/r4/e48ebcb3-4027-5c58-ac57-e866afc7be0c/Patient/2586450001&quot;,
+          &quot;display&quot;: &quot;PEREZ JUAN&quot;
+      },
+      &quot;date&quot;: &quot;2024-09-26&quot;,
+      &quot;author&quot;: [
+          {
+              &quot;type&quot;: &quot;Practitioner&quot;,
+              &quot;identifier&quot;: {
+                  &quot;use&quot;: &quot;official&quot;,
+                  &quot;type&quot;: {
+                      &quot;coding&quot;: [
+                          {
+                              &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0203&quot;,
+                              &quot;code&quot;: &quot;NPI&quot;,
+                              &quot;display&quot;: &quot;National provider identifier&quot;
+                          }
+                      ]
+                  },
+                  &quot;system&quot;: &quot;urn:ietf:rfc:3986&quot;,
+                  &quot;value&quot;: &quot;Cerner HIE&quot;
+              },
+              &quot;display&quot;: &quot;Cerner HIE&quot;
+          }
+      ],
+      &quot;authenticator&quot;: {
+          &quot;type&quot;: &quot;Practitioner&quot;,
+          &quot;identifier&quot;: {
+              &quot;use&quot;: &quot;official&quot;,
+              &quot;type&quot;: {
+                  &quot;coding&quot;: [
+                      {
+                          &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0203&quot;,
+                          &quot;code&quot;: &quot;NPI&quot;,
+                          &quot;display&quot;: &quot;National provider identifier&quot;
+                      }
+                  ]
+              },
+              &quot;value&quot;: &quot;Cerner HIE&quot;
+          },
+          &quot;display&quot;: &quot;Cerner HIE&quot;
+      },
+      &quot;custodian&quot;: {
+          &quot;type&quot;: &quot;Organization&quot;,
+          &quot;identifier&quot;: {
+              &quot;use&quot;: &quot;official&quot;,
+              &quot;type&quot;: {
+                  &quot;coding&quot;: [
+                      {
+                          &quot;system&quot;: &quot;urn:ietf:rfc:3986&quot;,
+                          &quot;code&quot;: &quot;urn:oid&quot;,
+                          &quot;display&quot;: &quot;OID&quot;
+                      }
+                  ]
+              },
+              &quot;value&quot;: &quot;&quot;
+          },
+          &quot;display&quot;: &quot;Model Clinic 2&quot;
+      },
+      &quot;description&quot;: &quot;CCD for Encounter: 18103-2.16.840.1.113883.3.995.10.2.1&quot;,
+      &quot;securityLabel&quot;: [
+          {
+              &quot;coding&quot;: [
+                  {
+                      &quot;system&quot;: &quot;2.16.840.1.113883.5.25&quot;,
+                      &quot;code&quot;: &quot;N&quot;,
+                      &quot;display&quot;: &quot;Normal&quot;
+                  }
+              ]
+          }
+      ],
+      &quot;content&quot;: [
+          {
+              &quot;attachment&quot;: {
+                  &quot;contentType&quot;: &quot;text/xml&quot;,
+                  &quot;language&quot;: &quot;en-us&quot;,
+                  &quot;url&quot;: &quot;https://cell1.query.stage.cdexhub.us-ashburn-1.oci.oraclecloud.com/fhir/r4/e48ebcb3-4027-5c58-ac57-e866afc7be0c/Binary/urn:uuid:cca32c1d-8301-4ed7-ac8e-671cb11ff968&quot;,
+                  &quot;size&quot;: 108842,
+                  &quot;hash&quot;: &quot;f49999cd60913a68f8b89d7f431ee1ef24853b73&quot;,
+                  &quot;creation&quot;: &quot;2024-09-26&quot;
+              },
+              &quot;format&quot;: {
+                  &quot;system&quot;: &quot;1.3.6.1.4.1.19376.1.2.3&quot;,
+                  &quot;code&quot;: &quot;urn:ihe:pcc:xphr:2007&quot;,
+                  &quot;display&quot;: &quot;HL7 CCD Document&quot;
+              }
+          }
+      ],
+      &quot;context&quot;: {
+          &quot;encounter&quot;: [
+              {
+                  &quot;identifier&quot;: {
+                      &quot;system&quot;: &quot;891c71549f4a4bb439b4de8a532f155c_2.16.840.1.113883.3.995.10.2.1&quot;,
+                      &quot;value&quot;: &quot;18103&quot;
+                  }
+              }
+          ],
+          &quot;period&quot;: {
+              &quot;end&quot;: &quot;2024-05-13&quot;
+          },
+          &quot;practiceSetting&quot;: {
+              &quot;coding&quot;: [
+                  {
+                      &quot;system&quot;: &quot;2.16.840.1.113883.6.96&quot;,
+                      &quot;code&quot;: &quot;394802001&quot;,
+                      &quot;display&quot;: &quot;General Medicine&quot;
+                  }
+              ]
+          },
+          &quot;sourcePatientInfo&quot;: {
+              &quot;identifier&quot;: {
+                  &quot;system&quot;: &quot;891c71549f4a4bb439b4de8a532f155c_2.16.840.1.113883.3.995.10.1.1&quot;,
+                  &quot;value&quot;: &quot;8133&quot;
+              },
+              &quot;display&quot;: &quot;PEREZ JUAN&quot;
+          }
+      }
+  }
+}
+</code></pre></div>
+    
+
+    
+
+
+</div>
+
+                    
+                    <div id="200-definitions-Reference" class="swagger-schema">
+    <div class="panel-heading">Nested Schema : Reference</div>
+    
+      
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+    <div class="h5">Match All</div>
+    
+        
+    
+        
+    
+    <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+    <ul class="schema-properties">
+        
+        <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Element-allof-0" aria-expanded="false" aria-controls="200-definitions-Element-allof-0">
+            
+            object 
+            
+            
+        </a> <a href="#200-definitions-Element" role="button" class="btn btn-default btn-sm btn-xsm">Element</a>
+            
+        <div class="collapse schema-summary" id="200-definitions-Element-allof-0">
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </div>
+        </li>
+        
+        <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Reference-allOf-1-allof-1" aria-expanded="false" aria-controls="200-definitions-Reference-allOf-1-allof-1">
+            
+            object 
+            
+            
+        </a> <a href="#200-definitions-Reference-allOf-1" role="button" class="btn btn-default btn-sm btn-xsm">Reference-allOf[1]</a>
+            
+        <div class="collapse schema-summary" id="200-definitions-Reference-allOf-1-allof-1">
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </div>
+        </li>
+        
+    </ul>
+    <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;allOf&quot;:[
+        {
+            &quot;$ref&quot;:&quot;#/definitions/Element&quot;
+        },
+        {
+            &quot;type&quot;:&quot;object&quot;,
+            &quot;properties&quot;:{
+                &quot;reference&quot;:{
+                    &quot;type&quot;:&quot;string&quot;,
+                    &quot;description&quot;:&quot;iteral reference, Relative, internal or absolute URL&quot;
+                },
+                &quot;type&quot;:{
+                    &quot;type&quot;:&quot;string&quot;,
+                    &quot;description&quot;:&quot;Type the reference refers to (e.g. \&quot;Patient\&quot;)&quot;
+                },
+                &quot;identifier&quot;:{
+                    &quot;$ref&quot;:&quot;#/definitions/Identifier&quot;
+                },
+                &quot;display&quot;:{
+                    &quot;type&quot;:&quot;string&quot;,
+                    &quot;description&quot;:&quot;Text alternative for the resource&quot;
+                }
+            }
+        }
+    ]
+}</code></pre>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</div>
+
+                    
+                    <div id="200-definitions-DocumentReference-properties-author" class="swagger-schema">
+    <div class="panel-heading">Nested Schema : author</div>
+    
+      
+      <div class="schema-type">Type: <code>array</code></div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div>The Practitioner who authored the document.</div>
+    
+
+    
+
+    
+
+    
+    
+        <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+        <ul class="schema-properties">
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Reference-items-0" aria-expanded="false" aria-controls="200-definitions-Reference-items-0">
+            Array of: 
+                </a> <a href="#200-definitions-Reference" role="button" class="btn btn-default btn-sm btn-xsm">Reference</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-Reference-items-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </div>
+            </li>
+            
+        </ul>
+        <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;type&quot;:&quot;array&quot;,
+    &quot;description&quot;:&quot;The Practitioner who authored the document.&quot;,
+    &quot;items&quot;:{
+        &quot;$ref&quot;:&quot;#/definitions/Reference&quot;
+    }
+}</code></pre>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</div>
+
+                    
+                    <div id="200-definitions-DocumentReference-properties-category" class="swagger-schema">
+    <div class="panel-heading">Nested Schema : category</div>
+    
+      
+      <div class="schema-type">Type: <code>array</code></div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div>The document category, displayed as Summary of Episode Note in the generated C-CDA documents. 
+ Preferred valueset https://hl7.org/fhir/R4/valueset-document-classcodes.html</div>
+    
+
+    
+
+    
+
+    
+    
+        <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+        <ul class="schema-properties">
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-CodeableConcept-items-0" aria-expanded="false" aria-controls="200-definitions-CodeableConcept-items-0">
+            Array of: 
+                </a> <a href="#200-definitions-CodeableConcept" role="button" class="btn btn-default btn-sm btn-xsm">CodeableConcept</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-CodeableConcept-items-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </div>
+            </li>
+            
+        </ul>
+        <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;type&quot;:&quot;array&quot;,
+    &quot;description&quot;:&quot;The document category, displayed as Summary of Episode Note in the generated C-CDA documents. \r\n Preferred valueset https://hl7.org/fhir/R4/valueset-document-classcodes.html&quot;,
+    &quot;items&quot;:{
+        &quot;$ref&quot;:&quot;#/definitions/CodeableConcept&quot;
+    }
+}</code></pre>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</div>
+
+                    
+                    <div id="200-definitions-DocumentReference-properties-content" class="swagger-schema">
+    <div class="panel-heading">Nested Schema : content</div>
+    
+      <div class="schema-type">Type: <code>object</code></div>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div>The document referenced.</div>
+    
+
+    
+
+    
+
+    
+    <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+        <ul class="schema-properties">
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-DocumentReference-properties-content-properties-attachment-properties-attachment-0" aria-expanded="false" aria-controls="200-definitions-DocumentReference-properties-content-properties-attachment-properties-attachment-0">
+            attachment: 
+            object </a> <a href="#200-definitions-DocumentReference-properties-content-properties-attachment" role="button" class="btn btn-default btn-sm btn-xsm">attachment</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-DocumentReference-properties-content-properties-attachment-properties-attachment-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">The location where you can access the document.</div>
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Coding-properties-format-0" aria-expanded="false" aria-controls="200-definitions-Coding-properties-format-0">
+            format: 
+            </a> <a href="#200-definitions-Coding" role="button" class="btn btn-default btn-sm btn-xsm">Coding</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-Coding-properties-format-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </div>
+            </li>
+            
+        </ul>
+        <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;type&quot;:&quot;object&quot;,
+    &quot;description&quot;:&quot;The document referenced.&quot;,
+    &quot;properties&quot;:{
+        &quot;attachment&quot;:{
+            &quot;type&quot;:&quot;object&quot;,
+            &quot;description&quot;:&quot;The location where you can access the document.&quot;,
+            &quot;properties&quot;:{
+                &quot;contentType&quot;:{
+                    &quot;type&quot;:&quot;string&quot;,
+                    &quot;description&quot;:&quot;The mime type of the content, including the character set and other information.&quot;
+                },
+                &quot;language&quot;:{
+                    &quot;type&quot;:&quot;string&quot;,
+                    &quot;description&quot;:&quot;The human language of the content.&quot;
+                },
+                &quot;url&quot;:{
+                    &quot;type&quot;:&quot;string&quot;,
+                    &quot;description&quot;:&quot;The URI where the data is available.&quot;
+                },
+                &quot;size&quot;:{
+                    &quot;type&quot;:&quot;number&quot;,
+                    &quot;description&quot;:&quot;The number of bytes of content (if the URL is provided).&quot;
+                },
+                &quot;hash&quot;:{
+                    &quot;type&quot;:&quot;string&quot;,
+                    &quot;description&quot;:&quot;The hash of the data (for example, sha-1, base64ed).&quot;
+                },
+                &quot;title&quot;:{
+                    &quot;type&quot;:&quot;string&quot;,
+                    &quot;description&quot;:&quot;The label that is displayed in place of the data.&quot;
+                },
+                &quot;creation&quot;:{
+                    &quot;type&quot;:&quot;string&quot;,
+                    &quot;format&quot;:&quot;date-time&quot;,
+                    &quot;description&quot;:&quot;The date that the attachment was initially created.&quot;
+                }
+            }
+        },
+        &quot;format&quot;:{
+            &quot;type&quot;:&quot;object&quot;,
+            &quot;$ref&quot;:&quot;#/definitions/Coding&quot;,
+            &quot;description&quot;:&quot;The format and content rules for the document. \r\n https://hl7.org/fhir/R4/valueset-formatcodes.html&quot;
+        }
+    }
+}</code></pre>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</div>
+
+                    
+                    <div id="200-definitions-DocumentReference-properties-context" class="swagger-schema">
+    <div class="panel-heading">Nested Schema : context</div>
+    
+      <div class="schema-type">Type: <code>object</code></div>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+        <ul class="schema-properties">
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Reference-properties-encounter-0" aria-expanded="false" aria-controls="200-definitions-Reference-properties-encounter-0">
+            encounter: 
+            </a> <a href="#200-definitions-Reference" role="button" class="btn btn-default btn-sm btn-xsm">Reference</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-Reference-properties-encounter-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Period-properties-period-6" aria-expanded="false" aria-controls="200-definitions-Period-properties-period-6">
+            period: 
+            </a> <a href="#200-definitions-Period" role="button" class="btn btn-default btn-sm btn-xsm">Period</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-Period-properties-period-6">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-CodeableConcept-properties-practiceSetting-0" aria-expanded="false" aria-controls="200-definitions-CodeableConcept-properties-practiceSetting-0">
+            practiceSetting: 
+            </a> <a href="#200-definitions-CodeableConcept" role="button" class="btn btn-default btn-sm btn-xsm">CodeableConcept</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-CodeableConcept-properties-practiceSetting-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Reference-properties-sourcePatientInfo-0" aria-expanded="false" aria-controls="200-definitions-Reference-properties-sourcePatientInfo-0">
+            sourcePatientInfo: 
+            </a> <a href="#200-definitions-Reference" role="button" class="btn btn-default btn-sm btn-xsm">Reference</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-Reference-properties-sourcePatientInfo-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </div>
+            </li>
+            
+        </ul>
+        <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;type&quot;:&quot;object&quot;,
+    &quot;properties&quot;:{
+        &quot;encounter&quot;:{
+            &quot;type&quot;:&quot;object&quot;,
+            &quot;description&quot;:&quot;The context of the document content.&quot;,
+            &quot;$ref&quot;:&quot;#/definitions/Reference&quot;
+        },
+        &quot;period&quot;:{
+            &quot;type&quot;:&quot;object&quot;,
+            &quot;description&quot;:&quot;The time of service that is being documented.&quot;,
+            &quot;$ref&quot;:&quot;#/definitions/Period&quot;
+        },
+        &quot;practiceSetting&quot;:{
+            &quot;type&quot;:&quot;object&quot;,
+            &quot;description&quot;:&quot;Additional details about where the content was created (for example, the clinical specialty).&quot;,
+            &quot;$ref&quot;:&quot;#/definitions/CodeableConcept&quot;
+        },
+        &quot;sourcePatientInfo&quot;:{
+            &quot;type&quot;:&quot;object&quot;,
+            &quot;description&quot;:&quot;This object retrieves the patient MRN from the source system.&quot;,
+            &quot;$ref&quot;:&quot;#/definitions/Reference&quot;
+        }
+    }
+}</code></pre>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</div>
+
+                    
+                    <div id="200-definitions-DocumentReference-properties-identifier" class="swagger-schema">
+    <div class="panel-heading">Nested Schema : identifier</div>
+    
+      
+      <div class="schema-type">Type: <code>array</code></div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div>Other identifiers for the document.</div>
+    
+
+    
+
+    
+
+    
+    
+        <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+        <ul class="schema-properties">
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Identifier-items-0" aria-expanded="false" aria-controls="200-definitions-Identifier-items-0">
+            Array of: 
+                </a> <a href="#200-definitions-Identifier" role="button" class="btn btn-default btn-sm btn-xsm">Identifier</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-Identifier-items-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </div>
+            </li>
+            
+        </ul>
+        <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;type&quot;:&quot;array&quot;,
+    &quot;description&quot;:&quot;Other identifiers for the document.&quot;,
+    &quot;items&quot;:{
+        &quot;$ref&quot;:&quot;#/definitions/Identifier&quot;
+    }
+}</code></pre>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</div>
+
+                    
+                    <div id="200-definitions-Identifier" class="swagger-schema">
+    <div class="panel-heading">Nested Schema : Identifier</div>
+    
+      
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+    <div class="h5">Match All</div>
+    
+        
+    
+        
+    
+    <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+    <ul class="schema-properties">
+        
+        <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Element-allof-0" aria-expanded="false" aria-controls="200-definitions-Element-allof-0">
+            
+            object 
+            
+            
+        </a> <a href="#200-definitions-Element" role="button" class="btn btn-default btn-sm btn-xsm">Element</a>
+            
+        <div class="collapse schema-summary" id="200-definitions-Element-allof-0">
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </div>
+        </li>
+        
+        <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Identifier-allOf-1-allof-1" aria-expanded="false" aria-controls="200-definitions-Identifier-allOf-1-allof-1">
+            
+            object 
+            
+            
+        </a> <a href="#200-definitions-Identifier-allOf-1" role="button" class="btn btn-default btn-sm btn-xsm">Identifier-allOf[1]</a>
+            
+        <div class="collapse schema-summary" id="200-definitions-Identifier-allOf-1-allof-1">
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </div>
+        </li>
+        
+    </ul>
+    <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;allOf&quot;:[
+        {
+            &quot;$ref&quot;:&quot;#/definitions/Element&quot;
+        },
+        {
+            &quot;type&quot;:&quot;object&quot;,
+            &quot;properties&quot;:{
+                &quot;use&quot;:{
+                    &quot;type&quot;:&quot;string&quot;,
+                    &quot;description&quot;:&quot;usual | official | temp | secondary | old (If known)&quot;
+                },
+                &quot;type&quot;:{
+                    &quot;$ref&quot;:&quot;#/definitions/CodeableConcept&quot;
+                },
+                &quot;system&quot;:{
+                    &quot;type&quot;:&quot;string&quot;,
+                    &quot;description&quot;:&quot;The namespace for the identifier value (uri)&quot;
+                },
+                &quot;value&quot;:{
+                    &quot;type&quot;:&quot;string&quot;,
+                    &quot;description&quot;:&quot;The value that is unique&quot;
+                },
+                &quot;period&quot;:{
+                    &quot;$ref&quot;:&quot;#/definitions/Period&quot;
+                }
+            }
+        }
+    ]
+}</code></pre>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</div>
+
+                    
+                    <div id="200-definitions-DocumentReference-properties-securityLabel" class="swagger-schema">
+    <div class="panel-heading">Nested Schema : securityLabel</div>
+    
+      
+      <div class="schema-type">Type: <code>array</code></div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div>The security tag hard-coded as Normal is displayed on the generated C-CDA documents.</div>
+    
+
+    
+
+    
+
+    
+    
+        <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+        <ul class="schema-properties">
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-CodeableConcept-items-0" aria-expanded="false" aria-controls="200-definitions-CodeableConcept-items-0">
+            Array of: 
+                </a> <a href="#200-definitions-CodeableConcept" role="button" class="btn btn-default btn-sm btn-xsm">CodeableConcept</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-CodeableConcept-items-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </div>
+            </li>
+            
+        </ul>
+        <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;type&quot;:&quot;array&quot;,
+    &quot;description&quot;:&quot;The security tag hard-coded as Normal is displayed on the generated C-CDA documents.&quot;,
+    &quot;items&quot;:{
+        &quot;$ref&quot;:&quot;#/definitions/CodeableConcept&quot;
+    }
+}</code></pre>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</div>
+
+                    
+                    <div id="200-definitions-DocumentReference-properties-subject" class="swagger-schema">
+    <div class="panel-heading">Nested Schema : subject</div>
+    
+      <div class="schema-type">Type: <code>object</code></div>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+        <ul class="schema-properties">
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-DocumentReference-properties-subject-properties-reference-properties-reference-0" aria-expanded="false" aria-controls="200-definitions-DocumentReference-properties-subject-properties-reference-properties-reference-0">
+            reference: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-DocumentReference-properties-subject-properties-reference-properties-reference-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The reference to the Oracle Health Clinical Data Exchange patient ID.</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+        </ul>
+        <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;type&quot;:&quot;object&quot;,
+    &quot;properties&quot;:{
+        &quot;reference&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;The reference to the Oracle Health Clinical Data Exchange patient ID.&quot;
+        }
+    }
+}</code></pre>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</div>
+
+                    
+                    <div id="200-definitions-DocumentReference-properties-type" class="swagger-schema">
+    <div class="panel-heading">Nested Schema : type</div>
+    
+      
+      <div class="schema-type">Type: <code>array</code></div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div>The type of document, displayed as Summary of Episode Note in the generated C-CDA documents. 
+ Preferred valueset https://hl7.org/fhir/R4/valueset-c80-doc-typecodes.html</div>
+    
+
+    
+
+    
+
+    
+    
+        <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+        <ul class="schema-properties">
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-CodeableConcept-items-0" aria-expanded="false" aria-controls="200-definitions-CodeableConcept-items-0">
+            Array of: 
+                </a> <a href="#200-definitions-CodeableConcept" role="button" class="btn btn-default btn-sm btn-xsm">CodeableConcept</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-CodeableConcept-items-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </div>
+            </li>
+            
+        </ul>
+        <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;type&quot;:&quot;array&quot;,
+    &quot;description&quot;:&quot;The type of document, displayed as Summary of Episode Note in the generated C-CDA documents. \r\n Preferred valueset https://hl7.org/fhir/R4/valueset-c80-doc-typecodes.html&quot;,
+    &quot;items&quot;:{
+        &quot;$ref&quot;:&quot;#/definitions/CodeableConcept&quot;
+    }
+}</code></pre>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</div>
+
+                    
+                    <div id="200-definitions-Element" class="swagger-schema">
+    <div class="panel-heading">Nested Schema : Element</div>
+    
+      <div class="schema-type">Type: <code>object</code></div>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+        <ul class="schema-properties">
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Element-properties-extension-properties-extension-2" aria-expanded="false" aria-controls="200-definitions-Element-properties-extension-properties-extension-2">
+            extension: 
+            array </a> <a href="#200-definitions-Element-properties-extension" role="button" class="btn btn-default btn-sm btn-xsm">extension</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-Element-properties-extension-properties-extension-2">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Element-properties-id-properties-id-2" aria-expanded="false" aria-controls="200-definitions-Element-properties-id-properties-id-2">
+            id: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-Element-properties-id-properties-id-2">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Unique id for inter-element referencing</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+        </ul>
+        <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;type&quot;:&quot;object&quot;,
+    &quot;properties&quot;:{
+        &quot;id&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;Unique id for inter-element referencing&quot;
+        },
+        &quot;extension&quot;:{
+            &quot;type&quot;:&quot;array&quot;,
+            &quot;items&quot;:{
+                &quot;$ref&quot;:&quot;#/definitions/Extension&quot;
+            }
+        }
+    }
+}</code></pre>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</div>
+
+                    
+                    <div id="200-definitions-Reference-allOf-1" class="swagger-schema">
+    <div class="panel-heading">Nested Schema : Reference-allOf[1]</div>
+    
+      <div class="schema-type">Type: <code>object</code></div>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+        <ul class="schema-properties">
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Reference-allOf-1-properties-display-properties-display-0" aria-expanded="false" aria-controls="200-definitions-Reference-allOf-1-properties-display-properties-display-0">
+            display: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-Reference-allOf-1-properties-display-properties-display-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Text alternative for the resource</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Identifier-properties-identifier-0" aria-expanded="false" aria-controls="200-definitions-Identifier-properties-identifier-0">
+            identifier: 
+            </a> <a href="#200-definitions-Identifier" role="button" class="btn btn-default btn-sm btn-xsm">Identifier</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-Identifier-properties-identifier-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Reference-allOf-1-properties-reference-properties-reference-0" aria-expanded="false" aria-controls="200-definitions-Reference-allOf-1-properties-reference-properties-reference-0">
+            reference: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-Reference-allOf-1-properties-reference-properties-reference-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>iteral reference, Relative, internal or absolute URL</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Reference-allOf-1-properties-type-properties-type-0" aria-expanded="false" aria-controls="200-definitions-Reference-allOf-1-properties-type-properties-type-0">
+            type: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-Reference-allOf-1-properties-type-properties-type-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Type the reference refers to (e.g. "Patient")</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+        </ul>
+        <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;type&quot;:&quot;object&quot;,
+    &quot;properties&quot;:{
+        &quot;reference&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;iteral reference, Relative, internal or absolute URL&quot;
+        },
+        &quot;type&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;Type the reference refers to (e.g. \&quot;Patient\&quot;)&quot;
+        },
+        &quot;identifier&quot;:{
+            &quot;$ref&quot;:&quot;#/definitions/Identifier&quot;
+        },
+        &quot;display&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;Text alternative for the resource&quot;
+        }
+    }
+}</code></pre>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</div>
+
+                    
+                    <div id="200-definitions-Element-properties-extension" class="swagger-schema">
+    <div class="panel-heading">Nested Schema : extension</div>
+    
+      
+      <div class="schema-type">Type: <code>array</code></div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+        <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+        <ul class="schema-properties">
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Extension-items-0" aria-expanded="false" aria-controls="200-definitions-Extension-items-0">
+            Array of: 
+                object </a> <a href="#200-definitions-Extension" role="button" class="btn btn-default btn-sm btn-xsm">Extension</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-Extension-items-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </div>
+            </li>
+            
+        </ul>
+        <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;type&quot;:&quot;array&quot;,
+    &quot;items&quot;:{
+        &quot;$ref&quot;:&quot;#/definitions/Extension&quot;
+    }
+}</code></pre>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</div>
+
+                    
+                    <div id="200-definitions-Extension" class="swagger-schema">
+    <div class="panel-heading">Nested Schema : Extension</div>
+    
+      <div class="schema-type">Type: <code>object</code></div>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+        <ul class="schema-properties">
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Extension-properties-url-properties-url-2" aria-expanded="false" aria-controls="200-definitions-Extension-properties-url-properties-url-2">
+            url: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-Extension-properties-url-properties-url-2">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Minimum Length: <code>1</code></div>
+
+
+
+
+
+
+
+
+
+
+
+<div>identifies the meaning of the extension</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Extension-properties-value-properties-value-2" aria-expanded="false" aria-controls="200-definitions-Extension-properties-value-properties-value-2">
+            value: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-Extension-properties-value-properties-value-2">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Minimum Length: <code>1</code></div>
+
+
+
+
+
+
+
+
+
+
+
+<div>Value of extension</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+        </ul>
+        <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;type&quot;:&quot;object&quot;,
+    &quot;properties&quot;:{
+        &quot;url&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;identifies the meaning of the extension&quot;,
+            &quot;minLength&quot;:&quot;1&quot;
+        },
+        &quot;value&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;Value of extension&quot;,
+            &quot;minLength&quot;:&quot;1&quot;
+        }
+    }
+}</code></pre>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</div>
+
+                    
+                    <div id="200-definitions-CodeableConcept" class="swagger-schema">
+    <div class="panel-heading">Nested Schema : CodeableConcept</div>
+    
+      
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+    <div class="h5">Match All</div>
+    
+        
+    
+        
+    
+    <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+    <ul class="schema-properties">
+        
+        <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Element-allof-0" aria-expanded="false" aria-controls="200-definitions-Element-allof-0">
+            
+            object 
+            
+            
+        </a> <a href="#200-definitions-Element" role="button" class="btn btn-default btn-sm btn-xsm">Element</a>
+            
+        <div class="collapse schema-summary" id="200-definitions-Element-allof-0">
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </div>
+        </li>
+        
+        <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-CodeableConcept-allOf-1-allof-1" aria-expanded="false" aria-controls="200-definitions-CodeableConcept-allOf-1-allof-1">
+            
+            object 
+            
+            
+        </a> <a href="#200-definitions-CodeableConcept-allOf-1" role="button" class="btn btn-default btn-sm btn-xsm">CodeableConcept-allOf[1]</a>
+            
+        <div class="collapse schema-summary" id="200-definitions-CodeableConcept-allOf-1-allof-1">
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </div>
+        </li>
+        
+    </ul>
+    <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;allOf&quot;:[
+        {
+            &quot;$ref&quot;:&quot;#/definitions/Element&quot;
+        },
+        {
+            &quot;type&quot;:&quot;object&quot;,
+            &quot;properties&quot;:{
+                &quot;coding&quot;:{
+                    &quot;description&quot;:&quot;A reference to a code defined by a terminology system&quot;,
+                    &quot;type&quot;:&quot;array&quot;,
+                    &quot;items&quot;:{
+                        &quot;$ref&quot;:&quot;#/definitions/Coding&quot;
+                    }
+                },
+                &quot;text&quot;:{
+                    &quot;type&quot;:&quot;string&quot;,
+                    &quot;description&quot;:&quot;Plain text representation of the concept&quot;
+                }
+            }
+        }
+    ]
+}</code></pre>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</div>
+
+                    
+                    <div id="200-definitions-CodeableConcept-allOf-1" class="swagger-schema">
+    <div class="panel-heading">Nested Schema : CodeableConcept-allOf[1]</div>
+    
+      <div class="schema-type">Type: <code>object</code></div>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+        <ul class="schema-properties">
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-CodeableConcept-allOf-1-properties-coding-properties-coding-2" aria-expanded="false" aria-controls="200-definitions-CodeableConcept-allOf-1-properties-coding-properties-coding-2">
+            coding: 
+            array </a> <a href="#200-definitions-CodeableConcept-allOf-1-properties-coding" role="button" class="btn btn-default btn-sm btn-xsm">coding</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-CodeableConcept-allOf-1-properties-coding-properties-coding-2">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">A reference to a code defined by a terminology system</div>
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-CodeableConcept-allOf-1-properties-text-properties-text-2" aria-expanded="false" aria-controls="200-definitions-CodeableConcept-allOf-1-properties-text-properties-text-2">
+            text: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-CodeableConcept-allOf-1-properties-text-properties-text-2">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Plain text representation of the concept</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+        </ul>
+        <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;type&quot;:&quot;object&quot;,
+    &quot;properties&quot;:{
+        &quot;coding&quot;:{
+            &quot;description&quot;:&quot;A reference to a code defined by a terminology system&quot;,
+            &quot;type&quot;:&quot;array&quot;,
+            &quot;items&quot;:{
+                &quot;$ref&quot;:&quot;#/definitions/Coding&quot;
+            }
+        },
+        &quot;text&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;Plain text representation of the concept&quot;
+        }
+    }
+}</code></pre>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</div>
+
+                    
+                    <div id="200-definitions-CodeableConcept-allOf-1-properties-coding" class="swagger-schema">
+    <div class="panel-heading">Nested Schema : coding</div>
+    
+      
+      <div class="schema-type">Type: <code>array</code></div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div>A reference to a code defined by a terminology system</div>
+    
+
+    
+
+    
+
+    
+    
+        <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+        <ul class="schema-properties">
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Coding-items-0" aria-expanded="false" aria-controls="200-definitions-Coding-items-0">
+            Array of: 
+                </a> <a href="#200-definitions-Coding" role="button" class="btn btn-default btn-sm btn-xsm">Coding</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-Coding-items-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </div>
+            </li>
+            
+        </ul>
+        <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;description&quot;:&quot;A reference to a code defined by a terminology system&quot;,
+    &quot;type&quot;:&quot;array&quot;,
+    &quot;items&quot;:{
+        &quot;$ref&quot;:&quot;#/definitions/Coding&quot;
+    }
+}</code></pre>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</div>
+
+                    
+                    <div id="200-definitions-Coding" class="swagger-schema">
+    <div class="panel-heading">Nested Schema : Coding</div>
+    
+      
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+    <div class="h5">Match All</div>
+    
+        
+    
+        
+    
+    <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+    <ul class="schema-properties">
+        
+        <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Element-allof-0" aria-expanded="false" aria-controls="200-definitions-Element-allof-0">
+            
+            object 
+            
+            
+        </a> <a href="#200-definitions-Element" role="button" class="btn btn-default btn-sm btn-xsm">Element</a>
+            
+        <div class="collapse schema-summary" id="200-definitions-Element-allof-0">
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </div>
+        </li>
+        
+        <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Coding-allOf-1-allof-1" aria-expanded="false" aria-controls="200-definitions-Coding-allOf-1-allof-1">
+            
+            object 
+            
+            
+        </a> <a href="#200-definitions-Coding-allOf-1" role="button" class="btn btn-default btn-sm btn-xsm">Coding-allOf[1]</a>
+            
+        <div class="collapse schema-summary" id="200-definitions-Coding-allOf-1-allof-1">
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </div>
+        </li>
+        
+    </ul>
+    <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;allOf&quot;:[
+        {
+            &quot;$ref&quot;:&quot;#/definitions/Element&quot;
+        },
+        {
+            &quot;type&quot;:&quot;object&quot;,
+            &quot;properties&quot;:{
+                &quot;system&quot;:{
+                    &quot;type&quot;:&quot;string&quot;,
+                    &quot;description&quot;:&quot;Identity of the terminology system&quot;,
+                    &quot;minLength&quot;:&quot;1&quot;
+                },
+                &quot;version&quot;:{
+                    &quot;type&quot;:&quot;string&quot;,
+                    &quot;description&quot;:&quot;Version of the system - if relevant&quot;,
+                    &quot;minLength&quot;:&quot;1&quot;
+                },
+                &quot;code&quot;:{
+                    &quot;type&quot;:&quot;string&quot;,
+                    &quot;description&quot;:&quot;Symbol in syntax defined by the system&quot;,
+                    &quot;minLength&quot;:&quot;1&quot;
+                },
+                &quot;display&quot;:{
+                    &quot;type&quot;:&quot;string&quot;,
+                    &quot;description&quot;:&quot;Representation defined by the system&quot;,
+                    &quot;minLength&quot;:&quot;1&quot;
+                },
+                &quot;userSelected&quot;:{
+                    &quot;type&quot;:&quot;boolean&quot;,
+                    &quot;description&quot;:&quot;If this coding was chosen directly by the user&quot;
+                }
+            }
+        }
+    ]
+}</code></pre>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</div>
+
+                    
+                    <div id="200-definitions-Coding-allOf-1" class="swagger-schema">
+    <div class="panel-heading">Nested Schema : Coding-allOf[1]</div>
+    
+      <div class="schema-type">Type: <code>object</code></div>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+        <ul class="schema-properties">
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Coding-allOf-1-properties-code-properties-code-2" aria-expanded="false" aria-controls="200-definitions-Coding-allOf-1-properties-code-properties-code-2">
+            code: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-Coding-allOf-1-properties-code-properties-code-2">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Minimum Length: <code>1</code></div>
+
+
+
+
+
+
+
+
+
+
+
+<div>Symbol in syntax defined by the system</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Coding-allOf-1-properties-display-properties-display-2" aria-expanded="false" aria-controls="200-definitions-Coding-allOf-1-properties-display-properties-display-2">
+            display: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-Coding-allOf-1-properties-display-properties-display-2">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Minimum Length: <code>1</code></div>
+
+
+
+
+
+
+
+
+
+
+
+<div>Representation defined by the system</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Coding-allOf-1-properties-system-properties-system-2" aria-expanded="false" aria-controls="200-definitions-Coding-allOf-1-properties-system-properties-system-2">
+            system: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-Coding-allOf-1-properties-system-properties-system-2">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Minimum Length: <code>1</code></div>
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity of the terminology system</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Coding-allOf-1-properties-userSelected-properties-userSelected-2" aria-expanded="false" aria-controls="200-definitions-Coding-allOf-1-properties-userSelected-properties-userSelected-2">
+            userSelected: 
+            boolean</a>
+            <div class="collapse schema-summary" id="200-definitions-Coding-allOf-1-properties-userSelected-properties-userSelected-2">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>If this coding was chosen directly by the user</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Coding-allOf-1-properties-version-properties-version-2" aria-expanded="false" aria-controls="200-definitions-Coding-allOf-1-properties-version-properties-version-2">
+            version: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-Coding-allOf-1-properties-version-properties-version-2">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Minimum Length: <code>1</code></div>
+
+
+
+
+
+
+
+
+
+
+
+<div>Version of the system - if relevant</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+        </ul>
+        <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;type&quot;:&quot;object&quot;,
+    &quot;properties&quot;:{
+        &quot;system&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;Identity of the terminology system&quot;,
+            &quot;minLength&quot;:&quot;1&quot;
+        },
+        &quot;version&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;Version of the system - if relevant&quot;,
+            &quot;minLength&quot;:&quot;1&quot;
+        },
+        &quot;code&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;Symbol in syntax defined by the system&quot;,
+            &quot;minLength&quot;:&quot;1&quot;
+        },
+        &quot;display&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;Representation defined by the system&quot;,
+            &quot;minLength&quot;:&quot;1&quot;
+        },
+        &quot;userSelected&quot;:{
+            &quot;type&quot;:&quot;boolean&quot;,
+            &quot;description&quot;:&quot;If this coding was chosen directly by the user&quot;
+        }
+    }
+}</code></pre>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</div>
+
+                    
+                    <div id="200-definitions-DocumentReference-properties-content-properties-attachment" class="swagger-schema">
+    <div class="panel-heading">Nested Schema : attachment</div>
+    
+      <div class="schema-type">Type: <code>object</code></div>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div>The location where you can access the document.</div>
+    
+
+    
+
+    
+
+    
+    <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+        <ul class="schema-properties">
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-DocumentReference-properties-content-properties-attachment-properties-contentType-properties-contentType-0" aria-expanded="false" aria-controls="200-definitions-DocumentReference-properties-content-properties-attachment-properties-contentType-properties-contentType-0">
+            contentType: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-DocumentReference-properties-content-properties-attachment-properties-contentType-properties-contentType-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The mime type of the content, including the character set and other information.</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-DocumentReference-properties-content-properties-attachment-properties-creation-properties-creation-0" aria-expanded="false" aria-controls="200-definitions-DocumentReference-properties-content-properties-attachment-properties-creation-properties-creation-0">
+            creation: 
+            string(date-time)</a>
+            <div class="collapse schema-summary" id="200-definitions-DocumentReference-properties-content-properties-attachment-properties-creation-properties-creation-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The date that the attachment was initially created.</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-DocumentReference-properties-content-properties-attachment-properties-hash-properties-hash-0" aria-expanded="false" aria-controls="200-definitions-DocumentReference-properties-content-properties-attachment-properties-hash-properties-hash-0">
+            hash: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-DocumentReference-properties-content-properties-attachment-properties-hash-properties-hash-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The hash of the data (for example, sha-1, base64ed).</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-DocumentReference-properties-content-properties-attachment-properties-language-properties-language-0" aria-expanded="false" aria-controls="200-definitions-DocumentReference-properties-content-properties-attachment-properties-language-properties-language-0">
+            language: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-DocumentReference-properties-content-properties-attachment-properties-language-properties-language-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The human language of the content.</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-DocumentReference-properties-content-properties-attachment-properties-size-properties-size-0" aria-expanded="false" aria-controls="200-definitions-DocumentReference-properties-content-properties-attachment-properties-size-properties-size-0">
+            size: 
+            number</a>
+            <div class="collapse schema-summary" id="200-definitions-DocumentReference-properties-content-properties-attachment-properties-size-properties-size-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The number of bytes of content (if the URL is provided).</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-DocumentReference-properties-content-properties-attachment-properties-title-properties-title-0" aria-expanded="false" aria-controls="200-definitions-DocumentReference-properties-content-properties-attachment-properties-title-properties-title-0">
+            title: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-DocumentReference-properties-content-properties-attachment-properties-title-properties-title-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The label that is displayed in place of the data.</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-DocumentReference-properties-content-properties-attachment-properties-url-properties-url-0" aria-expanded="false" aria-controls="200-definitions-DocumentReference-properties-content-properties-attachment-properties-url-properties-url-0">
+            url: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-DocumentReference-properties-content-properties-attachment-properties-url-properties-url-0">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The URI where the data is available.</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+        </ul>
+        <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;type&quot;:&quot;object&quot;,
+    &quot;description&quot;:&quot;The location where you can access the document.&quot;,
+    &quot;properties&quot;:{
+        &quot;contentType&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;The mime type of the content, including the character set and other information.&quot;
+        },
+        &quot;language&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;The human language of the content.&quot;
+        },
+        &quot;url&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;The URI where the data is available.&quot;
+        },
+        &quot;size&quot;:{
+            &quot;type&quot;:&quot;number&quot;,
+            &quot;description&quot;:&quot;The number of bytes of content (if the URL is provided).&quot;
+        },
+        &quot;hash&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;The hash of the data (for example, sha-1, base64ed).&quot;
+        },
+        &quot;title&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;The label that is displayed in place of the data.&quot;
+        },
+        &quot;creation&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;format&quot;:&quot;date-time&quot;,
+            &quot;description&quot;:&quot;The date that the attachment was initially created.&quot;
+        }
+    }
+}</code></pre>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</div>
+
+                    
+                    <div id="200-definitions-Period" class="swagger-schema">
+    <div class="panel-heading">Nested Schema : Period</div>
+    
+      
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+    <div class="h5">Match All</div>
+    
+        
+    
+        
+    
+    <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+    <ul class="schema-properties">
+        
+        <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Element-allof-0" aria-expanded="false" aria-controls="200-definitions-Element-allof-0">
+            
+            object 
+            
+            
+        </a> <a href="#200-definitions-Element" role="button" class="btn btn-default btn-sm btn-xsm">Element</a>
+            
+        <div class="collapse schema-summary" id="200-definitions-Element-allof-0">
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </div>
+        </li>
+        
+        <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Period-allOf-1-allof-1" aria-expanded="false" aria-controls="200-definitions-Period-allOf-1-allof-1">
+            
+            object 
+            
+            
+        </a> <a href="#200-definitions-Period-allOf-1" role="button" class="btn btn-default btn-sm btn-xsm">Period-allOf[1]</a>
+            
+        <div class="collapse schema-summary" id="200-definitions-Period-allOf-1-allof-1">
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </div>
+        </li>
+        
+    </ul>
+    <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;allOf&quot;:[
+        {
+            &quot;$ref&quot;:&quot;#/definitions/Element&quot;
+        },
+        {
+            &quot;type&quot;:&quot;object&quot;,
+            &quot;properties&quot;:{
+                &quot;start&quot;:{
+                    &quot;type&quot;:&quot;string&quot;,
+                    &quot;format&quot;:&quot;date-time&quot;,
+                    &quot;description&quot;:&quot;Starting time with inclusive boundary&quot;
+                },
+                &quot;end&quot;:{
+                    &quot;type&quot;:&quot;string&quot;,
+                    &quot;format&quot;:&quot;date-time&quot;,
+                    &quot;description&quot;:&quot;End time with inclusive boundary&quot;
+                }
+            }
+        }
+    ]
+}</code></pre>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</div>
+
+                    
+                    <div id="200-definitions-Period-allOf-1" class="swagger-schema">
+    <div class="panel-heading">Nested Schema : Period-allOf[1]</div>
+    
+      <div class="schema-type">Type: <code>object</code></div>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+        <ul class="schema-properties">
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Period-allOf-1-properties-end-properties-end-2" aria-expanded="false" aria-controls="200-definitions-Period-allOf-1-properties-end-properties-end-2">
+            end: 
+            string(date-time)</a>
+            <div class="collapse schema-summary" id="200-definitions-Period-allOf-1-properties-end-properties-end-2">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>End time with inclusive boundary</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Period-allOf-1-properties-start-properties-start-2" aria-expanded="false" aria-controls="200-definitions-Period-allOf-1-properties-start-properties-start-2">
+            start: 
+            string(date-time)</a>
+            <div class="collapse schema-summary" id="200-definitions-Period-allOf-1-properties-start-properties-start-2">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Starting time with inclusive boundary</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+        </ul>
+        <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;type&quot;:&quot;object&quot;,
+    &quot;properties&quot;:{
+        &quot;start&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;format&quot;:&quot;date-time&quot;,
+            &quot;description&quot;:&quot;Starting time with inclusive boundary&quot;
+        },
+        &quot;end&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;format&quot;:&quot;date-time&quot;,
+            &quot;description&quot;:&quot;End time with inclusive boundary&quot;
+        }
+    }
+}</code></pre>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</div>
+
+                    
+                    <div id="200-definitions-Identifier-allOf-1" class="swagger-schema">
+    <div class="panel-heading">Nested Schema : Identifier-allOf[1]</div>
+    
+      <div class="schema-type">Type: <code>object</code></div>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <a href="#" role="button" data-toggle="schema-view" class="toggle-schema pull-right btn btn-default btn-sm btn-xsm">Show Source</a>
+        <ul class="schema-properties">
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Period-properties-period-7" aria-expanded="false" aria-controls="200-definitions-Period-properties-period-7">
+            period: 
+            </a> <a href="#200-definitions-Period" role="button" class="btn btn-default btn-sm btn-xsm">Period</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-Period-properties-period-7">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Identifier-allOf-1-properties-system-properties-system-2" aria-expanded="false" aria-controls="200-definitions-Identifier-allOf-1-properties-system-properties-system-2">
+            system: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-Identifier-allOf-1-properties-system-properties-system-2">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The namespace for the identifier value (uri)</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-CodeableConcept-properties-type-2" aria-expanded="false" aria-controls="200-definitions-CodeableConcept-properties-type-2">
+            type: 
+            </a> <a href="#200-definitions-CodeableConcept" role="button" class="btn btn-default btn-sm btn-xsm">CodeableConcept</a>
+            
+            <div class="collapse schema-summary" id="200-definitions-CodeableConcept-properties-type-2">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Identifier-allOf-1-properties-use-properties-use-2" aria-expanded="false" aria-controls="200-definitions-Identifier-allOf-1-properties-use-properties-use-2">
+            use: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-Identifier-allOf-1-properties-use-properties-use-2">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>usual | official | temp | secondary | old (If known)</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+            <li><a role="button" data-toggle="prop-collapse" href="#200-definitions-Identifier-allOf-1-properties-value-properties-value-2" aria-expanded="false" aria-controls="200-definitions-Identifier-allOf-1-properties-value-properties-value-2">
+            value: 
+            string</a>
+            <div class="collapse schema-summary" id="200-definitions-Identifier-allOf-1-properties-value-properties-value-2">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The value that is unique</div>
+
+
+
+
+                
+            </div>
+            </li>
+            
+        </ul>
+        <pre class="schema-source" style="display: none;"><code class="json">{
+    &quot;type&quot;:&quot;object&quot;,
+    &quot;properties&quot;:{
+        &quot;use&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;usual | official | temp | secondary | old (If known)&quot;
+        },
+        &quot;type&quot;:{
+            &quot;$ref&quot;:&quot;#/definitions/CodeableConcept&quot;
+        },
+        &quot;system&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;The namespace for the identifier value (uri)&quot;
+        },
+        &quot;value&quot;:{
+            &quot;type&quot;:&quot;string&quot;,
+            &quot;description&quot;:&quot;The value that is unique&quot;
+        },
+        &quot;period&quot;:{
+            &quot;$ref&quot;:&quot;#/definitions/Period&quot;
+        }
+    }
+}</code></pre>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+</div>
+
+                    
+                    </div>
+
+                    
+                    </div>
+                
+                </div>
+                </div>
+                
+                <div class="response">
+                <h4 class="response-code range-400">400 Response</h4>
+                <div class="response-body">
+                <div>Bad Request.</div>
+
+                
+
+
+                
+                </div>
+                </div>
+                
+                <div class="response">
+                <h4 class="response-code range-400">401 Response</h4>
+                <div class="response-body">
+                <div>Authorization information is missing or invalid.</div>
+
+                
+
+
+                
+                </div>
+                </div>
+                
+                <div class="response">
+                <h4 class="response-code range-400">403 Response</h4>
+                <div class="response-body">
+                <div>The user does not have sufficient access to perform this action.</div>
+
+                
+
+
+                
+                </div>
+                </div>
+                
+                <div class="response">
+                <h4 class="response-code range-500">500 Response</h4>
+                <div class="response-body">
+                <div>Internal Server error</div>
+
+                
+
+
+                
+                </div>
+                </div>
+                
+
+				<a style="float: right" href="#top">Back to Top</a>
+				
+                
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

@@ -1,0 +1,6 @@
+{
+    "logo":"sp_common/ohc-templates/0-latest/img/ohc-logo.png",
+    "title":"REST APIs for Oracle Health Clinical Data Exchange",
+    "tabshare":"<p><a href=\"swagger.json\"><img src=\"sp_common/ohc-templates/0-latest/img/swagger_logo_small.png\" alt=\"Swagger Logo\"> Swagger 2.0 definition</a></p>",
+    "copyright":"Copyright &copy; 2014, 2015, Oracle and/or its affiliates. All rights reserved."
+}

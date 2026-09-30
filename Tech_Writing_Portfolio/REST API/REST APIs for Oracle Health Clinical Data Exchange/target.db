@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--doceng target.db-->
+<div element="book" href="toc.htm" number="" targetptr="">
+   <ttl>REST APIs for Oracle Health Clinical Data Exchange - Table of Contents</ttl>
+   <xreftext>&#x201C;REST APIs for Oracle Health Clinical Data Exchange - Table of Contents&#x201D;</xreftext>
+   <div element="index" href="index.html" targetptr="OCDEX-index">
+      <ttl>About the REST APIs</ttl>
+      <xreftext>&#x201C;About the REST APIs&#x201D;</xreftext>
+   </div>
+   <div element="rest-endpoints"
+        href="rest-endpoints.html"
+        targetptr="OCDEX-rest-endpoints">
+      <ttl>All REST Endpoints</ttl>
+      <xreftext>&#x201C;All REST Endpoints&#x201D;</xreftext>
+   </div>
+   <div element="chapter"
+        href="cdex-intro.html"
+        targetptr="OCDEX-cdex-intro">
+      <ttl>Oracle Health Clinical Data Exchange</ttl>
+      <xreftext>&#x201C;Oracle Health Clinical Data Exchange&#x201D;</xreftext>
+   </div>
+   <div element="chapter"
+        href="quick-start.html"
+        targetptr="OCDEX-quick-start">
+      <ttl>Quick Start</ttl>
+      <xreftext>&#x201C;Quick Start&#x201D;</xreftext>
+      <obj element="section"
+           href="quick-start_cdex.html"
+           targetptr="OCDEX-quick-start_cdex">
+         <ttl>Quick Start for Oracle Health Clinical Data Exchange APIs</ttl>
+         <xreftext>&#x201C;Quick Start for Oracle Health Clinical Data Exchange APIs&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="quick-start_fhir.html"
+           targetptr="OCDEX-quick-start_fhir">
+         <ttl>Quick Start for FHIR R4 APIs</ttl>
+         <xreftext>&#x201C;Quick Start for FHIR R4 APIs&#x201D;</xreftext>
+      </obj>
+   </div>
+   <div element="chapter"
+        href="authenticate.html"
+        targetptr="OCDEX-authenticate">
+      <ttl>Authenticate</ttl>
+      <xreftext>&#x201C;Authenticate&#x201D;</xreftext>
+      <obj element="section"
+           href="authenticate_oci.html"
+           targetptr="OCDEX-authenticate_oci">
+         <ttl>Authenticate with an Oracle Cloud Infrastructure signature</ttl>
+         <xreftext>&#x201C;Authenticate with an Oracle Cloud Infrastructure signature&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="authenticate_oauth2.html"
+           targetptr="OCDEX-authenticate_oauth2">
+         <ttl>Authenticate with a bearer access token</ttl>
+         <xreftext>&#x201C;Authenticate with a bearer access token&#x201D;</xreftext>
+      </obj>
+   </div>
+   <div element="chapter" href="use-curl.html" targetptr="OCDEX-use-curl">
+      <ttl>Use cURL</ttl>
+      <xreftext>&#x201C;Use cURL&#x201D;</xreftext>
+   </div>
+   <div element="chapter"
+        href="send-requests.html"
+        targetptr="OCDEX-send-requests">
+      <ttl>Send Requests</ttl>
+      <xreftext>&#x201C;Send Requests&#x201D;</xreftext>
+   </div>
+   <div element="chapter"
+        href="status-codes.html"
+        targetptr="OCDEX-status-codes">
+      <ttl>Status Codes</ttl>
+      <xreftext>&#x201C;Status Codes&#x201D;</xreftext>
+   </div>
+   <obj element="section"
+        href="quick-start_cdex.html"
+        targetptr="OCDEX-quick-start_cdex">
+      <ttl>Quick Start for Oracle Health Clinical Data Exchange APIs</ttl>
+      <xreftext>&#x201C;Quick Start for Oracle Health Clinical Data Exchange APIs&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="quick-start_fhir.html"
+        targetptr="OCDEX-quick-start_fhir">
+      <ttl>Quick Start for FHIR R4 APIs</ttl>
+      <xreftext>&#x201C;Quick Start for FHIR R4 APIs&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="authenticate_oci.html"
+        targetptr="OCDEX-authenticate_oci">
+      <ttl>Authenticate with an Oracle Cloud Infrastructure signature</ttl>
+      <xreftext>&#x201C;Authenticate with an Oracle Cloud Infrastructure signature&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="authenticate_oauth2.html"
+        targetptr="OCDEX-authenticate_oauth2">
+      <ttl>Authenticate with a bearer access token</ttl>
+      <xreftext>&#x201C;Authenticate with a bearer access token&#x201D;</xreftext>
+   </obj>
+   <div element="chapter"
+        href="api-binary.html"
+        targetptr="OCDEX-api-binary">
+      <ttl>Binary</ttl>
+      <xreftext>&#x201C;Binary&#x201D;</xreftext>
+      <obj element="section"
+           href="op-fhir-r4-query_endpoint_alias-binary-id-get.html"
+           targetptr="OCDEX-op-fhir-r4-query_endpoint_alias-binary-id-get">
+         <ttl>Get a binary document by ID</ttl>
+         <xreftext>&#x201C;Get a binary document by ID&#x201D;</xreftext>
+      </obj>
+   </div>
+   <div element="chapter"
+        href="api-cdexhub.html"
+        targetptr="OCDEX-api-cdexhub">
+      <ttl>cdexHub</ttl>
+      <xreftext>&#x201C;cdexHub&#x201D;</xreftext>
+      <obj element="section"
+           href="op-20180828-workrequests-workrequestid-delete.html"
+           targetptr="OCDEX-op-20180828-workrequests-workrequestid-delete">
+         <ttl>Cancel work requests</ttl>
+         <xreftext>&#x201C;Cancel work requests&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-deliveryendpoints-post.html"
+           targetptr="OCDEX-op-20180828-deliveryendpoints-post">
+         <ttl>Create a DeliveryEndpoint</ttl>
+         <xreftext>&#x201C;Create a DeliveryEndpoint&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-queryendpoints-post.html"
+           targetptr="OCDEX-op-20180828-queryendpoints-post">
+         <ttl>Create a QueryEndpoint</ttl>
+         <xreftext>&#x201C;Create a QueryEndpoint&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-deliveryendpoints-deliveryendpointid-delete.html"
+           targetptr="OCDEX-op-20180828-deliveryendpoints-deliveryendpointid-delete">
+         <ttl>Delete a DeliveryEndpoint</ttl>
+         <xreftext>&#x201C;Delete a DeliveryEndpoint&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-queryendpoints-queryendpointid-delete.html"
+           targetptr="OCDEX-op-20180828-queryendpoints-queryendpointid-delete">
+         <ttl>Delete a QueryEndpoint</ttl>
+         <xreftext>&#x201C;Delete a QueryEndpoint&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-deliveryendpoints-deliveryendpointid-get.html"
+           targetptr="OCDEX-op-20180828-deliveryendpoints-deliveryendpointid-get">
+         <ttl>Get a DeliveryEndpoint</ttl>
+         <xreftext>&#x201C;Get a DeliveryEndpoint&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-datasharingagreements-get.html"
+           targetptr="OCDEX-op-20180828-datasharingagreements-get">
+         <ttl>Get a list of DataSharingAgreements</ttl>
+         <xreftext>&#x201C;Get a list of DataSharingAgreements&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-datasharingconstraints-get.html"
+           targetptr="OCDEX-op-20180828-datasharingconstraints-get">
+         <ttl>Get a list of DataSharingConstraints</ttl>
+         <xreftext>&#x201C;Get a list of DataSharingConstraints&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-deliveryendpoints-get.html"
+           targetptr="OCDEX-op-20180828-deliveryendpoints-get">
+         <ttl>Get a list of DeliveryEndpoints</ttl>
+         <xreftext>&#x201C;Get a list of DeliveryEndpoints&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-payerdirectoryentries-get.html"
+           targetptr="OCDEX-op-20180828-payerdirectoryentries-get">
+         <ttl>Get a list of PayerDirectoryEntries</ttl>
+         <xreftext>&#x201C;Get a list of PayerDirectoryEntries&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-payers-get.html"
+           targetptr="OCDEX-op-20180828-payers-get">
+         <ttl>Get a list of Payers</ttl>
+         <xreftext>&#x201C;Get a list of Payers&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-providerdirectoryentries-get.html"
+           targetptr="OCDEX-op-20180828-providerdirectoryentries-get">
+         <ttl>Get a list of ProviderDirectoryEntries</ttl>
+         <xreftext>&#x201C;Get a list of ProviderDirectoryEntries&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-queryendpoints-get.html"
+           targetptr="OCDEX-op-20180828-queryendpoints-get">
+         <ttl>Get a list of QueryEndpoints</ttl>
+         <xreftext>&#x201C;Get a list of QueryEndpoints&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-payers-payerid-get.html"
+           targetptr="OCDEX-op-20180828-payers-payerid-get">
+         <ttl>Get a Payer</ttl>
+         <xreftext>&#x201C;Get a Payer&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-payerdirectoryentries-payerdirectoryentryid-get.html"
+           targetptr="OCDEX-op-20180828-payerdirectoryentries-payerdirectoryentryid-get">
+         <ttl>Get a PayerDirectoryEntry</ttl>
+         <xreftext>&#x201C;Get a PayerDirectoryEntry&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-queryendpoints-queryendpointid-get.html"
+           targetptr="OCDEX-op-20180828-queryendpoints-queryendpointid-get">
+         <ttl>Get a QueryEndpoint</ttl>
+         <xreftext>&#x201C;Get a QueryEndpoint&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-workrequests-workrequestid-get.html"
+           targetptr="OCDEX-op-20180828-workrequests-workrequestid-get">
+         <ttl>Get work request status</ttl>
+         <xreftext>&#x201C;Get work request status&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-workrequests-workrequestid-errors-get.html"
+           targetptr="OCDEX-op-20180828-workrequests-workrequestid-errors-get">
+         <ttl>List work request errors</ttl>
+         <xreftext>&#x201C;List work request errors&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-workrequests-workrequestid-logs-get.html"
+           targetptr="OCDEX-op-20180828-workrequests-workrequestid-logs-get">
+         <ttl>List work request logs</ttl>
+         <xreftext>&#x201C;List work request logs&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-workrequests-get.html"
+           targetptr="OCDEX-op-20180828-workrequests-get">
+         <ttl>List work requests</ttl>
+         <xreftext>&#x201C;List work requests&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-deliveryendpoints-deliveryendpointid-actions-changecompartment-post.html"
+           targetptr="OCDEX-op-20180828-deliveryendpoints-deliveryendpointid-actions-changecompartment-post">
+         <ttl>Move the DeliveryEndpoint into a different compartment</ttl>
+         <xreftext>&#x201C;Move the DeliveryEndpoint into a different compartment&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-queryendpoints-queryendpointid-actions-changecompartment-post.html"
+           targetptr="OCDEX-op-20180828-queryendpoints-queryendpointid-actions-changecompartment-post">
+         <ttl>Move the QueryEndpoint into a different compartment</ttl>
+         <xreftext>&#x201C;Move the QueryEndpoint into a different compartment&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-deliveryendpoints-deliveryendpointid-actions-testconnectivity-post.html"
+           targetptr="OCDEX-op-20180828-deliveryendpoints-deliveryendpointid-actions-testconnectivity-post">
+         <ttl>Test DeliveryEndpoint connectivity</ttl>
+         <xreftext>&#x201C;Test DeliveryEndpoint connectivity&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-deliveryendpoints-deliveryendpointid-put.html"
+           targetptr="OCDEX-op-20180828-deliveryendpoints-deliveryendpointid-put">
+         <ttl>Update a DeliveryEndpoint</ttl>
+         <xreftext>&#x201C;Update a DeliveryEndpoint&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-payerdirectoryentries-payerdirectoryentryid-put.html"
+           targetptr="OCDEX-op-20180828-payerdirectoryentries-payerdirectoryentryid-put">
+         <ttl>Update a PayerDirectoryEntry</ttl>
+         <xreftext>&#x201C;Update a PayerDirectoryEntry&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-20180828-queryendpoints-queryendpointid-put.html"
+           targetptr="OCDEX-op-20180828-queryendpoints-queryendpointid-put">
+         <ttl>Update a QueryEndpoint</ttl>
+         <xreftext>&#x201C;Update a QueryEndpoint&#x201D;</xreftext>
+      </obj>
+   </div>
+   <div element="chapter"
+        href="api-documentreference.html"
+        targetptr="OCDEX-api-documentreference">
+      <ttl>DocumentReference</ttl>
+      <xreftext>&#x201C;DocumentReference&#x201D;</xreftext>
+      <obj element="section"
+           href="op-fhir-r4-query_endpoint_alias-documentreference-id-get.html"
+           targetptr="OCDEX-op-fhir-r4-query_endpoint_alias-documentreference-id-get">
+         <ttl>Get a document reference by ID</ttl>
+         <xreftext>&#x201C;Get a document reference by ID&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-fhir-r4-query_endpoint_alias-documentreference-get.html"
+           targetptr="OCDEX-op-fhir-r4-query_endpoint_alias-documentreference-get">
+         <ttl>Get a list of document references</ttl>
+         <xreftext>&#x201C;Get a list of document references&#x201D;</xreftext>
+      </obj>
+   </div>
+   <div element="chapter"
+        href="api-patient.html"
+        targetptr="OCDEX-api-patient">
+      <ttl>Patient</ttl>
+      <xreftext>&#x201C;Patient&#x201D;</xreftext>
+      <obj element="section"
+           href="op-fhir-r4-query_endpoint_alias-patient-get.html"
+           targetptr="OCDEX-op-fhir-r4-query_endpoint_alias-patient-get">
+         <ttl>Get a patient list</ttl>
+         <xreftext>&#x201C;Get a patient list&#x201D;</xreftext>
+      </obj>
+      <obj element="section"
+           href="op-fhir-r4-query_endpoint_alias-patient-id-get.html"
+           targetptr="OCDEX-op-fhir-r4-query_endpoint_alias-patient-id-get">
+         <ttl>Get a patient record by ID</ttl>
+         <xreftext>&#x201C;Get a patient record by ID&#x201D;</xreftext>
+      </obj>
+   </div>
+   <obj element="section"
+        href="op-fhir-r4-query_endpoint_alias-binary-id-get.html"
+        targetptr="OCDEX-op-fhir-r4-query_endpoint_alias-binary-id-get">
+      <ttl>Get a binary document by ID</ttl>
+      <xreftext>&#x201C;Get a binary document by ID&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-workrequests-workrequestid-delete.html"
+        targetptr="OCDEX-op-20180828-workrequests-workrequestid-delete">
+      <ttl>Cancel work requests</ttl>
+      <xreftext>&#x201C;Cancel work requests&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-deliveryendpoints-post.html"
+        targetptr="OCDEX-op-20180828-deliveryendpoints-post">
+      <ttl>Create a DeliveryEndpoint</ttl>
+      <xreftext>&#x201C;Create a DeliveryEndpoint&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-queryendpoints-post.html"
+        targetptr="OCDEX-op-20180828-queryendpoints-post">
+      <ttl>Create a QueryEndpoint</ttl>
+      <xreftext>&#x201C;Create a QueryEndpoint&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-deliveryendpoints-deliveryendpointid-delete.html"
+        targetptr="OCDEX-op-20180828-deliveryendpoints-deliveryendpointid-delete">
+      <ttl>Delete a DeliveryEndpoint</ttl>
+      <xreftext>&#x201C;Delete a DeliveryEndpoint&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-queryendpoints-queryendpointid-delete.html"
+        targetptr="OCDEX-op-20180828-queryendpoints-queryendpointid-delete">
+      <ttl>Delete a QueryEndpoint</ttl>
+      <xreftext>&#x201C;Delete a QueryEndpoint&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-deliveryendpoints-deliveryendpointid-get.html"
+        targetptr="OCDEX-op-20180828-deliveryendpoints-deliveryendpointid-get">
+      <ttl>Get a DeliveryEndpoint</ttl>
+      <xreftext>&#x201C;Get a DeliveryEndpoint&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-datasharingagreements-get.html"
+        targetptr="OCDEX-op-20180828-datasharingagreements-get">
+      <ttl>Get a list of DataSharingAgreements</ttl>
+      <xreftext>&#x201C;Get a list of DataSharingAgreements&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-datasharingconstraints-get.html"
+        targetptr="OCDEX-op-20180828-datasharingconstraints-get">
+      <ttl>Get a list of DataSharingConstraints</ttl>
+      <xreftext>&#x201C;Get a list of DataSharingConstraints&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-deliveryendpoints-get.html"
+        targetptr="OCDEX-op-20180828-deliveryendpoints-get">
+      <ttl>Get a list of DeliveryEndpoints</ttl>
+      <xreftext>&#x201C;Get a list of DeliveryEndpoints&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-payerdirectoryentries-get.html"
+        targetptr="OCDEX-op-20180828-payerdirectoryentries-get">
+      <ttl>Get a list of PayerDirectoryEntries</ttl>
+      <xreftext>&#x201C;Get a list of PayerDirectoryEntries&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-payers-get.html"
+        targetptr="OCDEX-op-20180828-payers-get">
+      <ttl>Get a list of Payers</ttl>
+      <xreftext>&#x201C;Get a list of Payers&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-providerdirectoryentries-get.html"
+        targetptr="OCDEX-op-20180828-providerdirectoryentries-get">
+      <ttl>Get a list of ProviderDirectoryEntries</ttl>
+      <xreftext>&#x201C;Get a list of ProviderDirectoryEntries&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-queryendpoints-get.html"
+        targetptr="OCDEX-op-20180828-queryendpoints-get">
+      <ttl>Get a list of QueryEndpoints</ttl>
+      <xreftext>&#x201C;Get a list of QueryEndpoints&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-payers-payerid-get.html"
+        targetptr="OCDEX-op-20180828-payers-payerid-get">
+      <ttl>Get a Payer</ttl>
+      <xreftext>&#x201C;Get a Payer&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-payerdirectoryentries-payerdirectoryentryid-get.html"
+        targetptr="OCDEX-op-20180828-payerdirectoryentries-payerdirectoryentryid-get">
+      <ttl>Get a PayerDirectoryEntry</ttl>
+      <xreftext>&#x201C;Get a PayerDirectoryEntry&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-queryendpoints-queryendpointid-get.html"
+        targetptr="OCDEX-op-20180828-queryendpoints-queryendpointid-get">
+      <ttl>Get a QueryEndpoint</ttl>
+      <xreftext>&#x201C;Get a QueryEndpoint&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-workrequests-workrequestid-get.html"
+        targetptr="OCDEX-op-20180828-workrequests-workrequestid-get">
+      <ttl>Get work request status</ttl>
+      <xreftext>&#x201C;Get work request status&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-workrequests-workrequestid-errors-get.html"
+        targetptr="OCDEX-op-20180828-workrequests-workrequestid-errors-get">
+      <ttl>List work request errors</ttl>
+      <xreftext>&#x201C;List work request errors&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-workrequests-workrequestid-logs-get.html"
+        targetptr="OCDEX-op-20180828-workrequests-workrequestid-logs-get">
+      <ttl>List work request logs</ttl>
+      <xreftext>&#x201C;List work request logs&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-workrequests-get.html"
+        targetptr="OCDEX-op-20180828-workrequests-get">
+      <ttl>List work requests</ttl>
+      <xreftext>&#x201C;List work requests&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-deliveryendpoints-deliveryendpointid-actions-changecompartment-post.html"
+        targetptr="OCDEX-op-20180828-deliveryendpoints-deliveryendpointid-actions-changecompartment-post">
+      <ttl>Move the DeliveryEndpoint into a different compartment</ttl>
+      <xreftext>&#x201C;Move the DeliveryEndpoint into a different compartment&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-queryendpoints-queryendpointid-actions-changecompartment-post.html"
+        targetptr="OCDEX-op-20180828-queryendpoints-queryendpointid-actions-changecompartment-post">
+      <ttl>Move the QueryEndpoint into a different compartment</ttl>
+      <xreftext>&#x201C;Move the QueryEndpoint into a different compartment&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-deliveryendpoints-deliveryendpointid-actions-testconnectivity-post.html"
+        targetptr="OCDEX-op-20180828-deliveryendpoints-deliveryendpointid-actions-testconnectivity-post">
+      <ttl>Test DeliveryEndpoint connectivity</ttl>
+      <xreftext>&#x201C;Test DeliveryEndpoint connectivity&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-deliveryendpoints-deliveryendpointid-put.html"
+        targetptr="OCDEX-op-20180828-deliveryendpoints-deliveryendpointid-put">
+      <ttl>Update a DeliveryEndpoint</ttl>
+      <xreftext>&#x201C;Update a DeliveryEndpoint&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-payerdirectoryentries-payerdirectoryentryid-put.html"
+        targetptr="OCDEX-op-20180828-payerdirectoryentries-payerdirectoryentryid-put">
+      <ttl>Update a PayerDirectoryEntry</ttl>
+      <xreftext>&#x201C;Update a PayerDirectoryEntry&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-20180828-queryendpoints-queryendpointid-put.html"
+        targetptr="OCDEX-op-20180828-queryendpoints-queryendpointid-put">
+      <ttl>Update a QueryEndpoint</ttl>
+      <xreftext>&#x201C;Update a QueryEndpoint&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-fhir-r4-query_endpoint_alias-documentreference-id-get.html"
+        targetptr="OCDEX-op-fhir-r4-query_endpoint_alias-documentreference-id-get">
+      <ttl>Get a document reference by ID</ttl>
+      <xreftext>&#x201C;Get a document reference by ID&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-fhir-r4-query_endpoint_alias-documentreference-get.html"
+        targetptr="OCDEX-op-fhir-r4-query_endpoint_alias-documentreference-get">
+      <ttl>Get a list of document references</ttl>
+      <xreftext>&#x201C;Get a list of document references&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-fhir-r4-query_endpoint_alias-patient-get.html"
+        targetptr="OCDEX-op-fhir-r4-query_endpoint_alias-patient-get">
+      <ttl>Get a patient list</ttl>
+      <xreftext>&#x201C;Get a patient list&#x201D;</xreftext>
+   </obj>
+   <obj element="section"
+        href="op-fhir-r4-query_endpoint_alias-patient-id-get.html"
+        targetptr="OCDEX-op-fhir-r4-query_endpoint_alias-patient-id-get">
+      <ttl>Get a patient record by ID</ttl>
+      <xreftext>&#x201C;Get a patient record by ID&#x201D;</xreftext>
+   </obj>
+</div>

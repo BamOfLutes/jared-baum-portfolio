@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>REST APIs for Oracle Health Clinical Data Exchange - All REST Endpoints</title>
+		<link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+		<meta name="dcterms.dateCopyrighted" content="2025">
+		<meta name="dcterms.category" content="industries">
+		<meta name="dcterms.identifier" content="G28368-01">
+		<meta name="dcterms.isVersionOf" content="OCDEX">
+		
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+			
+
+        <meta name="description" content="These APIs allow a registered user to access the Oracle Health Clinical Data Exchange data for which they are authorized.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST APIs for Oracle Health Clinical Data Exchange">
+        <meta property="og:description" content="These APIs allow a registered user to access the Oracle Health Clinical Data Exchange data for which they are authorized.">
+        <meta name="generator" content="Oracle REST API Publisher 1.7.0">
+		<meta name="date" content="2025-03-11 18:25:02 UTC">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST APIs for Oracle Health Clinical Data Exchange">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="index.html" title="Previous" type="text/html">
+        <link rel="next" href="cdex-intro.html" title="Next" type="text/html">
+    
+    <meta name="dcterms.created" content="2025-03-11T18:27:40+00:00">
+    <meta name="dcterms.title" content="REST APIs for Oracle Health Clinical Data Exchange">
+    <meta name="dcterms.product" content="en/industries/health/clinical-data-exchange">
+    <meta name="dcterms.release" content="Latest Release">
+  <script id="ssot-metadata" type="application/json"> {"primary":{"category":{"short_name":"industries","element_name":"Industries","display_in_url":true},"suite":{"short_name":"health","element_name":"Health","display_in_url":true},"product_group":{"short_name":"healthcare","element_name":"Healthcare Applications","display_in_url":false},"product":{"short_name":"clinical-data-exchange","element_name":"Oracle Health Clinical Data Exchange","display_in_url":true},"release":{"short_name":"latest","element_name":"Latest Release","display_in_url":false}}} </script>
+    <script type="application/ld+json"> {"@context":"https://schema.org","@type":"WebPage","name":"REST APIs for Oracle Health Clinical Data Exchange - All REST Endpoints","description":"These APIs allow a registered user to access the Oracle Health Clinical Data Exchange data for which they are authorized.","datePublished":"2025-03-11 CST","dateModified":"2025-03-11 CST"} </script>
+    </head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="index.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="cdex-intro.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST APIs for Oracle Health Clinical Data Exchange</a></li>
+                    <li class="active">Endpoints</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+                <h2>All REST Endpoints</h2>
+            </header>
+
+            <div class="clearfix">
+                <form class="form-inline endpoints pull-left">
+                    <label for="sortby" class="control-label">Sort by</label>
+
+                    <div id="sortby" class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-primary active">
+                            <input type="radio" name="sort-radio" value="summary" autocomplete="off" checked> Task
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="sort-radio" value="path" autocomplete="off"> Path
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="sort-radio" value="method" autocomplete="off"> Method
+                        </label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            <input id="grouped" type="checkbox" checked> Group by API
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <section>
+
+<div class="tab-content">
+<div role="tabpanel" class="tab-pane fade in active" id="summary-sort-grouped">
+<div class="panel panel-default">
+<div class="panel-heading">Binary</div>
+<div class="panel-body">
+
+<dl class="list-group schema-properties">
+<dt><a href="op-fhir-r4-query_endpoint_alias-binary-id-get.html">Get a binary document by ID</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/fhir/r4/{query_endpoint_alias}/Binary/{id}</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">DocumentReference</div>
+<div class="panel-body">
+
+<dl class="list-group schema-properties">
+<dt><a href="op-fhir-r4-query_endpoint_alias-documentreference-id-get.html">Get a document reference by ID</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/fhir/r4/{query_endpoint_alias}/DocumentReference/{id}</code></div></dd>
+<dt><a href="op-fhir-r4-query_endpoint_alias-documentreference-get.html">Get a list of document references</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/fhir/r4/{query_endpoint_alias}/DocumentReference</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Patient</div>
+<div class="panel-body">
+
+<dl class="list-group schema-properties">
+<dt><a href="op-fhir-r4-query_endpoint_alias-patient-get.html">Get a patient list</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/fhir/r4/{query_endpoint_alias}/Patient</code></div></dd>
+<dt><a href="op-fhir-r4-query_endpoint_alias-patient-id-get.html">Get a patient record by ID</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/fhir/r4/{query_endpoint_alias}/Patient/{id}</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">cdexHub</div>
+<div class="panel-body">
+<div>The operations from the cdexHub category.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-20180828-workrequests-workrequestid-delete.html">Cancel work requests</a></dt><dd><div>Method: <span class="l-delete">delete</span></div><div>Path: <code>/20180828/workRequests/{workRequestId}</code></div></dd>
+<dt><a href="op-20180828-deliveryendpoints-post.html">Create a DeliveryEndpoint</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/20180828/deliveryEndpoints</code></div></dd>
+<dt><a href="op-20180828-queryendpoints-post.html">Create a QueryEndpoint</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/20180828/queryEndpoints</code></div></dd>
+<dt><a href="op-20180828-deliveryendpoints-deliveryendpointid-delete.html">Delete a DeliveryEndpoint</a></dt><dd><div>Method: <span class="l-delete">delete</span></div><div>Path: <code>/20180828/deliveryEndpoints/{deliveryEndpointId}</code></div></dd>
+<dt><a href="op-20180828-queryendpoints-queryendpointid-delete.html">Delete a QueryEndpoint</a></dt><dd><div>Method: <span class="l-delete">delete</span></div><div>Path: <code>/20180828/queryEndpoints/{queryEndpointId}</code></div></dd>
+<dt><a href="op-20180828-deliveryendpoints-deliveryendpointid-get.html">Get a DeliveryEndpoint</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/20180828/deliveryEndpoints/{deliveryEndpointId}</code></div></dd>
+<dt><a href="op-20180828-datasharingagreements-get.html">Get a list of DataSharingAgreements</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/20180828/dataSharingAgreements</code></div></dd>
+<dt><a href="op-20180828-datasharingconstraints-get.html">Get a list of DataSharingConstraints</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/20180828/dataSharingConstraints</code></div></dd>
+<dt><a href="op-20180828-deliveryendpoints-get.html">Get a list of DeliveryEndpoints</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/20180828/deliveryEndpoints</code></div></dd>
+<dt><a href="op-20180828-payerdirectoryentries-get.html">Get a list of PayerDirectoryEntries</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/20180828/payerDirectoryEntries</code></div></dd>
+<dt><a href="op-20180828-payers-get.html">Get a list of Payers</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/20180828/payers</code></div></dd>
+<dt><a href="op-20180828-providerdirectoryentries-get.html">Get a list of ProviderDirectoryEntries</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/20180828/providerDirectoryEntries</code></div></dd>
+<dt><a href="op-20180828-queryendpoints-get.html">Get a list of QueryEndpoints</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/20180828/queryEndpoints</code></div></dd>
+<dt><a href="op-20180828-payers-payerid-get.html">Get a Payer</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/20180828/payers/{payerId}</code></div></dd>
+<dt><a href="op-20180828-payerdirectoryentries-payerdirectoryentryid-get.html">Get a PayerDirectoryEntry</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/20180828/payerDirectoryEntries/{payerDirectoryEntryId}</code></div></dd>
+<dt><a href="op-20180828-queryendpoints-queryendpointid-get.html">Get a QueryEndpoint</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/20180828/queryEndpoints/{queryEndpointId}</code></div></dd>
+<dt><a href="op-20180828-workrequests-workrequestid-get.html">Get work request status</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/20180828/workRequests/{workRequestId}</code></div></dd>
+<dt><a href="op-20180828-workrequests-workrequestid-errors-get.html">List work request errors</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/20180828/workRequests/{workRequestId}/errors</code></div></dd>
+<dt><a href="op-20180828-workrequests-workrequestid-logs-get.html">List work request logs</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/20180828/workRequests/{workRequestId}/logs</code></div></dd>
+<dt><a href="op-20180828-workrequests-get.html">List work requests</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/20180828/workRequests</code></div></dd>
+<dt><a href="op-20180828-deliveryendpoints-deliveryendpointid-actions-changecompartment-post.html">Move the DeliveryEndpoint into a different compartment
+</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/20180828/deliveryEndpoints/{deliveryEndpointId}/actions/changeCompartment</code></div></dd>
+<dt><a href="op-20180828-queryendpoints-queryendpointid-actions-changecompartment-post.html">Move the QueryEndpoint into a different compartment
+</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/20180828/queryEndpoints/{queryEndpointId}/actions/changeCompartment</code></div></dd>
+<dt><a href="op-20180828-deliveryendpoints-deliveryendpointid-actions-testconnectivity-post.html">Test DeliveryEndpoint connectivity</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/20180828/deliveryEndpoints/{deliveryEndpointId}/actions/testConnectivity</code></div></dd>
+<dt><a href="op-20180828-deliveryendpoints-deliveryendpointid-put.html">Update a DeliveryEndpoint</a></dt><dd><div>Method: <span class="l-put">put</span></div><div>Path: <code>/20180828/deliveryEndpoints/{deliveryEndpointId}</code></div></dd>
+<dt><a href="op-20180828-payerdirectoryentries-payerdirectoryentryid-put.html">Update a PayerDirectoryEntry</a></dt><dd><div>Method: <span class="l-put">put</span></div><div>Path: <code>/20180828/payerDirectoryEntries/{payerDirectoryEntryId}</code></div></dd>
+<dt><a href="op-20180828-queryendpoints-queryendpointid-put.html">Update a QueryEndpoint</a></dt><dd><div>Method: <span class="l-put">put</span></div><div>Path: <code>/20180828/queryEndpoints/{queryEndpointId}</code></div></dd>
+
+</dl>
+</div>
+</div>
+</div>
+<div role="tabpanel" class="tab-pane fade" id="summary-sort-ungrouped"></div>
+<div role="tabpanel" class="tab-pane fade" id="path-sort-grouped"></div>
+<div role="tabpanel" class="tab-pane fade" id="path-sort-ungrouped"></div>
+<div role="tabpanel" class="tab-pane fade" id="method-sort-grouped"></div>
+<div role="tabpanel" class="tab-pane fade" id="method-sort-ungrouped"></div>
+</div>
+
+            </section>
+
+        </article>
+    </body>
+</html>
