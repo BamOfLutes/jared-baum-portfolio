@@ -1,3 +1,3 @@
 # REST API Guide Information
 
-To view the REST API content in this folder directory, navigate to the content you want to view and select the **index.html** file.
+To view the REST API content in this folder directory, download the ZIP file, extract all files to your local directory, and then select the **index.html** file.
