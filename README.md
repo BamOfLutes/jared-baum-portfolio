@@ -8,7 +8,7 @@ All product names, logos, trademarks, screenshots, and excerpted content not ori
 All such third-party content is:
 
 * Publicly available at the time of inclusion (e.g. published documentation, public-facing product pages, or publicly accessible release notes), and
-Included under fair use for the limited purpose of professional portfolio demonstration, commentary, and illustration of authorship and skill.
+included under fair use for the limited purpose of professional portfolio demonstration, commentary, and illustration of authorship and skill.
 
 * No confidential, proprietary, or non-public information is included. Where possible, materials have been excerpted, summarized, or recreated in a generic/fictionalized form rather than reproduced in full, to avoid unnecessary reliance on any single rights holder's content.
 
