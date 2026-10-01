@@ -1,1 +1,1 @@
-This folder contains video content.
+This folder contains video content. To view video content, select the file and then select the download icon. 
